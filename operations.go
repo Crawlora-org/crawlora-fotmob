@@ -5,8 +5,6 @@ package fotmob
 import (
 	"context"
 	"sort"
-
-	crawlora "github.com/Crawlora-org/crawlora-go-sdk"
 )
 
 type parameterDefinition struct {
@@ -75,156 +73,156 @@ func OperationIDs() []string {
 }
 
 // AudioMatches calls the fotmob-audio-matches operation.
-func (c *Client) AudioMatches(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) AudioMatches(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-audio-matches", params)
 }
 
 // FifaRankingPeriods calls the fotmob-fifa-ranking-periods operation.
-func (c *Client) FifaRankingPeriods(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) FifaRankingPeriods(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-fifa-ranking-periods", params)
 }
 
 // FifaRankings calls the fotmob-fifa-rankings operation.
-func (c *Client) FifaRankings(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) FifaRankings(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-fifa-rankings", params)
 }
 
 // LatestNews calls the fotmob-latest-news operation.
-func (c *Client) LatestNews(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) LatestNews(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-latest-news", params)
 }
 
 // League calls the fotmob-league operation.
-func (c *Client) League(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) League(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-league", params)
 }
 
 // Leagues calls the fotmob-leagues operation.
-func (c *Client) Leagues(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Leagues(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-leagues", params)
 }
 
 // LineupBuilderPlayers calls the fotmob-lineup-builder-players operation.
-func (c *Client) LineupBuilderPlayers(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) LineupBuilderPlayers(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-lineup-builder-players", params)
 }
 
 // LineupBuilderTeam calls the fotmob-lineup-builder-team operation.
-func (c *Client) LineupBuilderTeam(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) LineupBuilderTeam(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-lineup-builder-team", params)
 }
 
 // Match calls the fotmob-match operation.
-func (c *Client) Match(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Match(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-match", params)
 }
 
 // MatchMedia calls the fotmob-match-media operation.
-func (c *Client) MatchMedia(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) MatchMedia(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-match-media", params)
 }
 
 // Matches calls the fotmob-matches operation.
-func (c *Client) Matches(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Matches(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-matches", params)
 }
 
 // News calls the fotmob-news operation.
-func (c *Client) News(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) News(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-news", params)
 }
 
 // NewsArticle calls the fotmob-news-article operation.
-func (c *Client) NewsArticle(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) NewsArticle(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-news-article", params)
 }
 
 // Player calls the fotmob-player operation.
-func (c *Client) Player(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Player(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-player", params)
 }
 
 // PlayerMatchStats calls the fotmob-player-match-stats operation.
-func (c *Client) PlayerMatchStats(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) PlayerMatchStats(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-player-match-stats", params)
 }
 
 // PlayerMatches calls the fotmob-player-matches operation.
-func (c *Client) PlayerMatches(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) PlayerMatches(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-player-matches", params)
 }
 
 // PlayerStats calls the fotmob-player-stats operation.
-func (c *Client) PlayerStats(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) PlayerStats(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-player-stats", params)
 }
 
 // Search calls the fotmob-search operation.
-func (c *Client) Search(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Search(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-search", params)
 }
 
 // Seasons calls the fotmob-seasons operation.
-func (c *Client) Seasons(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Seasons(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-seasons", params)
 }
 
 // Stats calls the fotmob-stats operation.
-func (c *Client) Stats(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Stats(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-stats", params)
 }
 
 // StatsCategories calls the fotmob-stats-categories operation.
-func (c *Client) StatsCategories(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) StatsCategories(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-stats-categories", params)
 }
 
 // Table calls the fotmob-table operation.
-func (c *Client) Table(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Table(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-table", params)
 }
 
 // Team calls the fotmob-team operation.
-func (c *Client) Team(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Team(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-team", params)
 }
 
 // TeamFixtures calls the fotmob-team-fixtures operation.
-func (c *Client) TeamFixtures(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TeamFixtures(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-team-fixtures", params)
 }
 
 // TeamNews calls the fotmob-team-news operation.
-func (c *Client) TeamNews(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TeamNews(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-team-news", params)
 }
 
 // Transfers calls the fotmob-transfers operation.
-func (c *Client) Transfers(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) Transfers(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-transfers", params)
 }
 
 // TrendingNews calls the fotmob-trending-news operation.
-func (c *Client) TrendingNews(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TrendingNews(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-trending-news", params)
 }
 
 // TrendingSearches calls the fotmob-trending-searches operation.
-func (c *Client) TrendingSearches(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TrendingSearches(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-trending-searches", params)
 }
 
 // TvGuide calls the fotmob-tv-guide operation.
-func (c *Client) TvGuide(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TvGuide(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-tv-guide", params)
 }
 
 // TvGuideChannels calls the fotmob-tv-guide-channels operation.
-func (c *Client) TvGuideChannels(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TvGuideChannels(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-tv-guide-channels", params)
 }
 
 // TvGuideCountries calls the fotmob-tv-guide-countries operation.
-func (c *Client) TvGuideCountries(ctx context.Context, params crawlora.Params) (any, error) {
+func (c *Client) TvGuideCountries(ctx context.Context, params Params) (any, error) {
 	return c.Call(ctx, "fotmob-tv-guide-countries", params)
 }
