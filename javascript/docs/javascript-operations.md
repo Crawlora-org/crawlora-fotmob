@@ -1,0 +1,39 @@
+# Crawlora FotMob JavaScript Client Operations
+
+Generated from `openapi/public.json`. Deprecated, admin, and internal operations are excluded from this SDK contract.
+
+Total operations: `31`
+
+| Group | SDK method | Operation ID | HTTP | Params | Auth | Response | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| fotmob | `fotmob.audioMatches` | `fotmob-audio-matches` | `GET /fotmob/audio-matches` | none | `ApiKeyAuth` | `FotmobAudioMatchesResponse` |  |
+| fotmob | `fotmob.fifaRankingPeriods` | `fotmob-fifa-ranking-periods` | `GET /fotmob/fifa-ranking-periods` | `gender` (query "men" \| "women" required) | `ApiKeyAuth` | `FotmobFifaRankingPeriodsResponse` |  |
+| fotmob | `fotmob.fifaRankings` | `fotmob-fifa-rankings` | `GET /fotmob/fifa-rankings` | `gender` (query "men" \| "women" required)<br>`period_id` (query string required) | `ApiKeyAuth` | `FotmobFifaRankingsResponse` |  |
+| fotmob | `fotmob.latestNews` | `fotmob-latest-news` | `GET /fotmob/latest-news` | `start_index` (query number) | `ApiKeyAuth` | `FotmobLatestNewsResponse` |  |
+| fotmob | `fotmob.league` | `fotmob-league` | `GET /fotmob/league` | `league_id` (query number required)<br>`season` (query string)<br>`shotmap` (query boolean) | `ApiKeyAuth` | `FotmobLeagueResponse` |  |
+| fotmob | `fotmob.leagues` | `fotmob-leagues` | `GET /fotmob/leagues` | none | `ApiKeyAuth` | `FotmobLeaguesResponse` |  |
+| fotmob | `fotmob.lineupBuilderPlayers` | `fotmob-lineup-builder-players` | `GET /fotmob/lineup-builder-players` | `player_ids` (query string required) | `ApiKeyAuth` | `FotmobLineupBuilderPlayersResponse` |  |
+| fotmob | `fotmob.lineupBuilderTeam` | `fotmob-lineup-builder-team` | `GET /fotmob/lineup-builder-team` | `team_id` (query string required) | `ApiKeyAuth` | `FotmobLineupBuilderTeamResponse` |  |
+| fotmob | `fotmob.match` | `fotmob-match` | `GET /fotmob/match` | `id` (query string required) | `ApiKeyAuth` | `FotmobMatchResponse` |  |
+| fotmob | `fotmob.matchMedia` | `fotmob-match-media` | `GET /fotmob/match-media` | `id` (query string required) | `ApiKeyAuth` | `FotmobMatchMediaResponse` |  |
+| fotmob | `fotmob.matches` | `fotmob-matches` | `GET /fotmob/matches` | `date` (query string required)<br>`timezone` (query string) | `ApiKeyAuth` | `FotmobMatchesResponse` |  |
+| fotmob | `fotmob.news` | `fotmob-news` | `GET /fotmob/news` | `league_id` (query string required)<br>`start_index` (query number) | `ApiKeyAuth` | `FotmobNewsResponse` |  |
+| fotmob | `fotmob.newsArticle` | `fotmob-news-article` | `GET /fotmob/news-article` | `id` (query string required) | `ApiKeyAuth` | `FotmobNewsArticleResponse` |  |
+| fotmob | `fotmob.player` | `fotmob-player` | `GET /fotmob/player` | `id` (query string required)<br>`include_market_values` (query boolean) | `ApiKeyAuth` | `FotmobPlayerResponse` |  |
+| fotmob | `fotmob.playerMatchStats` | `fotmob-player-match-stats` | `GET /fotmob/player-match-stats` | `player_id` (query string required)<br>`match_id` (query string required) | `ApiKeyAuth` | `FotmobPlayerMatchStatsResponse` |  |
+| fotmob | `fotmob.playerMatches` | `fotmob-player-matches` | `GET /fotmob/player-matches` | `player_id` (query string required)<br>`league_id` (query string)<br>`team_id` (query string)<br>`before` (query string) | `ApiKeyAuth` | `FotmobPlayerMatchesResponse` |  |
+| fotmob | `fotmob.playerStats` | `fotmob-player-stats` | `GET /fotmob/player-stats` | `player_id` (query string required)<br>`season_id` (query string required) | `ApiKeyAuth` | `FotmobPlayerStatsResponse` |  |
+| fotmob | `fotmob.search` | `fotmob-search` | `GET /fotmob/search` | `term` (query string required) | `ApiKeyAuth` | `FotmobSearchResponse` |  |
+| fotmob | `fotmob.seasons` | `fotmob-seasons` | `GET /fotmob/seasons` | `league_id` (query number required) | `ApiKeyAuth` | `FotmobSeasonsResponse` |  |
+| fotmob | `fotmob.stats` | `fotmob-stats` | `GET /fotmob/stats` | `league_id` (query string required)<br>`season_id` (query string)<br>`type` (query "players" \| "teams" required)<br>`stat` (query string required)<br>`team_id` (query string)<br>`position` (query "all" \| "striker" \| "winger" \| "attackingMidfielder" \| "midfielder" \| "fullback" \| "centerBack") | `ApiKeyAuth` | `FotmobStatsResponse` |  |
+| fotmob | `fotmob.statsCategories` | `fotmob-stats-categories` | `GET /fotmob/stats-categories` | `league_id` (query string required)<br>`season_id` (query string)<br>`type` (query "players" \| "teams" required) | `ApiKeyAuth` | `FotmobStatsCategoriesResponse` |  |
+| fotmob | `fotmob.table` | `fotmob-table` | `GET /fotmob/table` | `league_id` (query string required) | `ApiKeyAuth` | `FotmobTableResponse` |  |
+| fotmob | `fotmob.team` | `fotmob-team` | `GET /fotmob/team` | `id` (query string required) | `ApiKeyAuth` | `FotmobTeamResponse` |  |
+| fotmob | `fotmob.teamFixtures` | `fotmob-team-fixtures` | `GET /fotmob/team-fixtures` | `team_id` (query string required)<br>`cursor` (query string required) | `ApiKeyAuth` | `FotmobTeamFixturesResponse` |  |
+| fotmob | `fotmob.teamNews` | `fotmob-team-news` | `GET /fotmob/team-news` | `team_id` (query number required)<br>`start_index` (query number) | `ApiKeyAuth` | `FotmobTeamNewsResponse` |  |
+| fotmob | `fotmob.transfers` | `fotmob-transfers` | `GET /fotmob/transfers` | `mode` (query "all" \| "rumours" \| "popular")<br>`page` (query number)<br>`last` (query "6months" \| "1year" \| "2years" \| "3years")<br>`direction` (query "all" \| "in" \| "out")<br>`min_fee` (query number)<br>`max_fee` (query number)<br>`league_ids` (query string)<br>`team_ids` (query string)<br>`order_by` (query "lastModified" \| "fee" \| "date" \| "name" \| "fromClubName" \| "toClubName")<br>`exclude_extensions` (query boolean)<br>`likely_only` (query boolean) | `ApiKeyAuth` | `FotmobTransfersResponse` |  |
+| fotmob | `fotmob.trendingNews` | `fotmob-trending-news` | `GET /fotmob/trending-news` | none | `ApiKeyAuth` | `FotmobTrendingNewsResponse` |  |
+| fotmob | `fotmob.trendingSearches` | `fotmob-trending-searches` | `GET /fotmob/trending-searches` | none | `ApiKeyAuth` | `FotmobTrendingSearchesResponse` |  |
+| fotmob | `fotmob.tvGuide` | `fotmob-tv-guide` | `GET /fotmob/tv-guide` | `country` (query "us" \| "se" \| "gb" \| "de" \| "no" \| "es" \| "mx" \| "ar" \| "bo" \| "cl" \| "co" \| "cr" \| "ec" \| "gt" \| "hn" \| "ni" \| "pa" \| "py" \| "pe" \| "uy" \| "ve" \| "da" \| "ca" \| "au" \| "at" \| "be" \| "bg" \| "hr" \| "cy" \| "cz" \| "ee" \| "fi" \| "fr" \| "gr" \| "hu" \| "is" \| "ie" \| "il" \| "it" \| "nl" \| "pl" \| "pt" \| "ro" \| "ru" \| "ch" \| "tr" \| "za" \| "br" \| "in" \| "me" \| "id" \| "th" \| "mm" \| "al" \| "az" \| "bl" \| "ba" \| "ks" \| "la" \| "li" \| "mk" \| "rs" \| "sk" \| "ua" \| "essv" \| "nz" \| "bd" \| "cn" \| "gh" \| "hk" \| "jp" \| "kr" \| "ma" \| "mt" \| "my" \| "ng" \| "ph" \| "pk" \| "sg" \| "si" \| "tz" required)<br>`timezone` (query string) | `ApiKeyAuth` | `FotmobTvGuideResponse` |  |
+| fotmob | `fotmob.tvGuideChannels` | `fotmob-tv-guide-channels` | `GET /fotmob/tv-guide-channels` | `country` (query "us" \| "se" \| "gb" \| "de" \| "no" \| "es" \| "mx" \| "ar" \| "bo" \| "cl" \| "co" \| "cr" \| "ec" \| "gt" \| "hn" \| "ni" \| "pa" \| "py" \| "pe" \| "uy" \| "ve" \| "da" \| "ca" \| "au" \| "at" \| "be" \| "bg" \| "hr" \| "cy" \| "cz" \| "ee" \| "fi" \| "fr" \| "gr" \| "hu" \| "is" \| "ie" \| "il" \| "it" \| "nl" \| "pl" \| "pt" \| "ro" \| "ru" \| "ch" \| "tr" \| "za" \| "br" \| "in" \| "me" \| "id" \| "th" \| "mm" \| "al" \| "az" \| "bl" \| "ba" \| "ks" \| "la" \| "li" \| "mk" \| "rs" \| "sk" \| "ua" \| "essv" \| "nz" \| "bd" \| "cn" \| "gh" \| "hk" \| "jp" \| "kr" \| "ma" \| "mt" \| "my" \| "ng" \| "ph" \| "pk" \| "sg" \| "si" \| "tz" required) | `ApiKeyAuth` | `FotmobTvGuideChannelsResponse` |  |
+| fotmob | `fotmob.tvGuideCountries` | `fotmob-tv-guide-countries` | `GET /fotmob/tv-guide-countries` | none | `ApiKeyAuth` | `FotmobTvGuideCountriesResponse` |  |
