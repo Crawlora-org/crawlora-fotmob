@@ -6,7 +6,7 @@ from .operations import OPERATION_COUNT, OPERATION_IDS, PLATFORM
 
 Client = FotMobClient
 AsyncClient = AsyncFotMobClient
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 DISPLAY_NAME = 'FotMob'
 PLATFORM = 'fotmob'
 CONTRACT_REVISION = 'sha256:d40e5ee2b400b1b40b5ca6998063cde26b6bb3e7f84da679b5047d26380f3fa1'
