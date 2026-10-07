@@ -1,0 +1,28 @@
+{
+  "name": "crawlora/fotmob",
+  "description": "FotMob client for the Crawlora hosted API",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Crawlora\\Fotmob\\": "php/src/Crawlora/Fotmob/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Crawlora\\Fotmob\\Tests\\": "php/tests/"
+    }
+  },
+  "scripts": {
+    "test": "php php/tests/client_test.php"
+  },
+  "homepage": "https://crawlora.net/",
+  "support": {
+    "source": "https://github.com/Crawlora-org/crawlora-fotmob"
+  }
+}
