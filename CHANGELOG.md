@@ -1,6 +1,10 @@
 # Changelog
 
+## 0.1.1 — 2026-10-07
+
+- Publish and verify npm releases through package-specific GitHub trusted publishing.
+- Retain the complete platform contract and Python/JavaScript client behavior.
+
 ## 0.1.0 — 2026-10-07
 
-- Initial FotMob JavaScript and Python clients for Crawlora's hosted API.
-- Includes promise-based JavaScript and synchronous/asynchronous Python interfaces, generated from contract revision `sha256:d40e5ee2b400b1b40b5ca6998063cde26b6bb3e7f84da679b5047d26380f3fa1`.
+- Initial focused hosted-API clients for JavaScript/TypeScript and Python.
