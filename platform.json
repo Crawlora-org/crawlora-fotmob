@@ -1,0 +1,14 @@
+{
+  "async_class_name": "AsyncFotMobClient",
+  "class_name": "FotMobClient",
+  "contract_revision": "sha256:d40e5ee2b400b1b40b5ca6998063cde26b6bb3e7f84da679b5047d26380f3fa1",
+  "display_name": "FotMob",
+  "group_name": "fotmob",
+  "module_name": "crawlora_fotmob",
+  "npm_name": "@crawlora-org/fotmob",
+  "platform": "fotmob",
+  "python_name": "crawlora-fotmob",
+  "repository": "https://github.com/Crawlora-org/crawlora-fotmob",
+  "source_contract_sha256": "f8ff81231fc46cd7d6ef5f5bb99707dfa301c595ce731a533a67b49d055aa44b",
+  "version": "0.1.0"
+}

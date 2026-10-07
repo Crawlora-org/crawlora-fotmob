@@ -1,0 +1,2367 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.fifaRankingPeriodData": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/fotmob.fifaRankingPeriodItemDoc"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://www.fotmob.com/api/data/fifarankings/period?gender=men",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.fifaRankingPeriodItemDoc": {
+      "properties": {
+        "periodId": {
+          "example": "20260720",
+          "type": "string"
+        },
+        "periodName": {
+          "example": "20.07.2026",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.fifaRankingPeriodsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/fotmob.fifaRankingPeriodData"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.fifaRankingRowDoc": {
+      "properties": {
+        "gainedRank": {
+          "example": true,
+          "type": "boolean"
+        },
+        "id": {
+          "example": 6720,
+          "type": "integer"
+        },
+        "lostRank": {
+          "example": false,
+          "type": "boolean"
+        },
+        "name": {
+          "example": "Spain",
+          "type": "string"
+        },
+        "pointsDiff": {
+          "example": 121,
+          "type": "integer"
+        },
+        "previousPoints": {
+          "example": 1875,
+          "type": "integer"
+        },
+        "rank": {
+          "example": 1,
+          "type": "integer"
+        },
+        "totalPoints": {
+          "example": 1996,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.fifaRankingRowsDataDoc": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/fotmob.fifaRankingRowDoc"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://www.fotmob.com/api/data/fifarankings/ranking?gender=men&periodId=20260720",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.fifaRankingsResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/fotmob.fifaRankingRowsDataDoc"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.newsItemDoc": {
+      "properties": {
+        "gmtTime": {
+          "example": "2026-09-26T15:24:07.000Z",
+          "type": "string"
+        },
+        "id": {
+          "example": "evfncmhqwgeg1xgdmv21cayfj",
+          "type": "string"
+        },
+        "imageUrl": {
+          "example": "https://images.example/story.jpg",
+          "type": "string"
+        },
+        "language": {
+          "example": "en",
+          "type": "string"
+        },
+        "lead": {
+          "example": "Article preview text.",
+          "type": "string"
+        },
+        "page": {
+          "$ref": "#/definitions/fotmob.newsItemPageDoc"
+        },
+        "sourceIconUrl": {
+          "example": "https://images.fotmob.com/image_resources/news/fotmob.png",
+          "type": "string"
+        },
+        "sourceStr": {
+          "example": "FotMob",
+          "type": "string"
+        },
+        "title": {
+          "example": "Latest football headline",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.newsItemPageDoc": {
+      "properties": {
+        "url": {
+          "example": "/news/evfncmhqwgeg1xgdmv21cayfj-latest-football-headline",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.newsListResponseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/fotmob.sourceNewsListDoc"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.responseDoc": {
+      "properties": {
+        "code": {
+          "example": 200,
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/fotmob.sourceDataDoc"
+        },
+        "msg": {
+          "example": "OK",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.sourceDataDoc": {
+      "properties": {
+        "data": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "source_url": {
+          "example": "https://www.fotmob.com/api/data/matches?date=20260925&timezone=UTC",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fotmob.sourceNewsListDoc": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/fotmob.newsItemDoc"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://www.fotmob.com/api/news/latestNews?lang=en&page=1&startIndex=0",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/fotmob/audio-matches": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's current match-to-audio-language availability index. Match ids are open-ended and can be passed to /fotmob/match. The list is independent of a selected match date and may include matches outside the current fixtures feed.",
+        "operationId": "fotmob-audio-matches",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob matches with audio commentary",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/fifa-ranking-periods": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns every ranking period currently offered by FotMob for the selected gender. Use a returned periodId with /fotmob/fifa-rankings.",
+        "operationId": "fotmob-fifa-ranking-periods",
+        "parameters": [
+          {
+            "description": "Ranking gender",
+            "enum": [
+              "men",
+              "women"
+            ],
+            "in": "query",
+            "name": "gender",
+            "required": true,
+            "type": "string",
+            "x-example": "men"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.fifaRankingPeriodsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob FIFA ranking period directory",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/fifa-rankings": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns ranked national-team points and rank changes for one period. Discover valid periodId values for the selected gender from /fotmob/fifa-ranking-periods.",
+        "operationId": "fotmob-fifa-rankings",
+        "parameters": [
+          {
+            "description": "Ranking gender",
+            "enum": [
+              "men",
+              "women"
+            ],
+            "in": "query",
+            "name": "gender",
+            "required": true,
+            "type": "string",
+            "x-example": "men"
+          },
+          {
+            "description": "Period id returned for this gender by /fotmob/fifa-ranking-periods",
+            "in": "query",
+            "name": "period_id",
+            "required": true,
+            "type": "string",
+            "x-example": "20260720"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.fifaRankingsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob FIFA national-team rankings",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/latest-news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the global English latest-news feed. Items are article previews; the upstream response contains up to 20 items per offset. Use start_index increments of 20 to page without overlap.",
+        "operationId": "fotmob-latest-news",
+        "parameters": [
+          {
+            "description": "Zero-based news offset; defaults to 0",
+            "in": "query",
+            "maximum": 10000,
+            "minimum": 0,
+            "name": "start_index",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.newsListResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob latest football news",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/league": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's public league page payload, including available tabs, overview, table, fixtures, statistics, transfers, and seasons where supplied by the league. Discover valid season values with /fotmob/seasons. shotmap=true includes the optional, larger overview shot-map payload.",
+        "operationId": "fotmob-league",
+        "parameters": [
+          {
+            "description": "Numeric FotMob league id from /fotmob/leagues",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "integer",
+            "x-example": 47
+          },
+          {
+            "description": "Optional season value from /fotmob/seasons for this league",
+            "in": "query",
+            "name": "season",
+            "type": "string",
+            "x-example": "2025/2026"
+          },
+          {
+            "default": false,
+            "description": "Include the optional overview shot map; increases response size",
+            "in": "query",
+            "name": "shotmap",
+            "type": "boolean"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob league details and sections",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/leagues": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's full public league directory grouped into popular, international, and country collections. Use league ids with other FotMob endpoints.",
+        "operationId": "fotmob-leagues",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob competition directory",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/lineup-builder-players": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns public metadata for 1 to 11 selected lineup players. Player ids are open-ended and can be discovered through /fotmob/search or /fotmob/lineup-builder-team. Unknown ids without complete public metadata return 404.",
+        "operationId": "fotmob-lineup-builder-players",
+        "parameters": [
+          {
+            "description": "Comma-separated list of 1 to 11 numeric FotMob player ids",
+            "in": "query",
+            "name": "player_ids",
+            "required": true,
+            "type": "string",
+            "x-example": "961995,562727"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob lineup builder player metadata",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/lineup-builder-team": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the public lineup builder's prefilled formation, starting lineup, and squad for a team id. Discover open-ended team ids with /fotmob/search. Some teams legitimately have no squad list.",
+        "operationId": "fotmob-lineup-builder-team",
+        "parameters": [
+          {
+            "description": "Numeric FotMob team id discoverable through /fotmob/search",
+            "in": "query",
+            "name": "team_id",
+            "required": true,
+            "type": "string",
+            "x-example": "9825"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob lineup builder team data",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/match": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's public match-details payload, including available facts, events, statistics, lineups, shot map, momentum, table and head-to-head sections. The data field preserves the upstream JSON shape; individual sections may be absent for a match.",
+        "operationId": "fotmob-match",
+        "parameters": [
+          {
+            "description": "Numeric FotMob match id",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "5181825"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob match details",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/match-media": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the public highlight-video and media metadata for one match. The request uses FotMob's English United States variant; unavailable media is represented by null source fields.",
+        "operationId": "fotmob-match-media",
+        "parameters": [
+          {
+            "description": "Numeric FotMob match id, discoverable from /fotmob/matches or /fotmob/search",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "5795457"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob match videos and media metadata",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/matches": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's public match payload for a calendar date and IANA timezone. The data field preserves the upstream JSON shape.",
+        "operationId": "fotmob-matches",
+        "parameters": [
+          {
+            "description": "Date in YYYYMMDD format",
+            "in": "query",
+            "name": "date",
+            "required": true,
+            "type": "string",
+            "x-example": "20260925"
+          },
+          {
+            "description": "IANA timezone; defaults to UTC",
+            "in": "query",
+            "name": "timezone",
+            "type": "string",
+            "x-example": "Asia/Shanghai"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob matches for a date",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a page of FotMob news items for one league. League ids are discoverable from /fotmob/leagues; start_index is a zero-based offset.",
+        "operationId": "fotmob-news",
+        "parameters": [
+          {
+            "description": "Numeric FotMob league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "47"
+          },
+          {
+            "description": "Zero-based news offset; defaults to 0",
+            "in": "query",
+            "maximum": 10000,
+            "minimum": 0,
+            "name": "start_index",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob league news",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/news-article": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the full article body for a FotMob-authored top-news story. Pass the complete id-and-slug value from the public /topnews/<id> URL. News previews from external publishers remain external and are not fetched.",
+        "operationId": "fotmob-news-article",
+        "parameters": [
+          {
+            "description": "Complete FotMob top-news article id and slug from the public article URL",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "29776-fotmob-totw-premier-league-matchday-5s-best-xi"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob full top-news article",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/player": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a public FotMob player profile, including current team, injuries, recent matches, career history, trophies, market values, and the player-specific season identifiers needed for deeper statistics. Discover player ids through /fotmob/search. Market values are included by default.",
+        "operationId": "fotmob-player",
+        "parameters": [
+          {
+            "description": "Numeric FotMob player id from fotmob/search",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "961995"
+          },
+          {
+            "default": true,
+            "description": "Include market-value history; defaults to true",
+            "in": "query",
+            "name": "include_market_values",
+            "type": "boolean"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob player profile",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/player-match-stats": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the public per-match stat rows for one player, including the available stat key, value, and translated label. Discover player ids through fotmob/search and match ids through fotmob/match or fotmob/player-matches.",
+        "operationId": "fotmob-player-match-stats",
+        "parameters": [
+          {
+            "description": "Numeric FotMob player id",
+            "in": "query",
+            "name": "player_id",
+            "required": true,
+            "type": "string",
+            "x-example": "961995"
+          },
+          {
+            "description": "Numeric FotMob match id",
+            "in": "query",
+            "name": "match_id",
+            "required": true,
+            "type": "string",
+            "x-example": "5795457"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob player match stats",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/player-matches": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of player match history. The player's matchFilters and permitted league/team pairs are discovered from /fotmob/player. For another page, copy the numeric before timestamp from the upstream previous URL.",
+        "operationId": "fotmob-player-matches",
+        "parameters": [
+          {
+            "description": "Numeric FotMob player id from fotmob/search",
+            "in": "query",
+            "name": "player_id",
+            "required": true,
+            "type": "string",
+            "x-example": "961995"
+          },
+          {
+            "default": "all",
+            "description": "all, or a numeric league id from fotmob/player matchFilters",
+            "in": "query",
+            "name": "league_id",
+            "type": "string",
+            "x-example": "47"
+          },
+          {
+            "default": "all",
+            "description": "all, or a numeric team id paired with league_id in fotmob/player matchFilters",
+            "in": "query",
+            "name": "team_id",
+            "type": "string",
+            "x-example": "9825"
+          },
+          {
+            "description": "Numeric before timestamp from the upstream previous URL; omit for the newest page",
+            "in": "query",
+            "name": "before",
+            "type": "string",
+            "x-example": "1767902400"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob player match history",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/player-stats": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns deep statistics, shot map, heatmap, and goalkeeper shot map for one player-specific season entry. Discover valid season_id values and hasDeepStats from /fotmob/player statSeasons; entry ids vary by player and season.",
+        "operationId": "fotmob-player-stats",
+        "parameters": [
+          {
+            "description": "Numeric FotMob player id from fotmob/search",
+            "in": "query",
+            "name": "player_id",
+            "required": true,
+            "type": "string",
+            "x-example": "961995"
+          },
+          {
+            "description": "Player-specific entryId from fotmob/player statSeasons",
+            "in": "query",
+            "name": "season_id",
+            "required": true,
+            "type": "string",
+            "x-example": "0-1"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob player season statistics",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns public search suggestions for FotMob leagues, teams, players, and matches. term must contain 1 to 50 characters. Suggestions preserve the upstream JSON shape.",
+        "operationId": "fotmob-search",
+        "parameters": [
+          {
+            "description": "Search phrase, 1 to 50 characters",
+            "in": "query",
+            "maxLength": 50,
+            "minLength": 1,
+            "name": "term",
+            "required": true,
+            "type": "string",
+            "x-example": "Arsenal"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search FotMob entities",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/seasons": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the complete list of season values accepted by the FotMob league endpoint for one competition.",
+        "operationId": "fotmob-seasons",
+        "parameters": [
+          {
+            "description": "Numeric FotMob league id from /fotmob/leagues",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "integer",
+            "x-example": 47
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob league season discovery",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/stats": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns ranked player or team statistics for a stat id discovered from /fotmob/stats-categories. The accepted stat ids vary by league, season, and type. team_id optionally restricts player statistics to one team. position filters player results client-side.",
+        "operationId": "fotmob-stats",
+        "parameters": [
+          {
+            "description": "Numeric FotMob league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "47"
+          },
+          {
+            "description": "Numeric season id from /fotmob/stats-categories; defaults to the newest season",
+            "in": "query",
+            "name": "season_id",
+            "type": "string",
+            "x-example": "36781"
+          },
+          {
+            "description": "Stats subject",
+            "enum": [
+              "players",
+              "teams"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string",
+            "x-example": "players"
+          },
+          {
+            "description": "Stat id returned by /fotmob/stats-categories for this league, season, and type",
+            "in": "query",
+            "name": "stat",
+            "required": true,
+            "type": "string",
+            "x-example": "goals"
+          },
+          {
+            "description": "Optional numeric team id to filter player stats",
+            "in": "query",
+            "name": "team_id",
+            "type": "string",
+            "x-example": "8456"
+          },
+          {
+            "description": "Optional client-side player position filter",
+            "enum": [
+              "all",
+              "striker",
+              "winger",
+              "attackingMidfielder",
+              "midfielder",
+              "fullback",
+              "centerBack"
+            ],
+            "in": "query",
+            "name": "position",
+            "type": "string",
+            "x-example": "striker"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob league player or team statistics",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/stats-categories": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's current stat catalog and available seasons for a league. With season_id omitted, the response exposes the season list and initial top-stat choices; pass a returned season id to retrieve that season's full player or team stat catalog.",
+        "operationId": "fotmob-stats-categories",
+        "parameters": [
+          {
+            "description": "Numeric FotMob league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "47"
+          },
+          {
+            "description": "Numeric season id; omit to discover seasons",
+            "in": "query",
+            "name": "season_id",
+            "type": "string",
+            "x-example": "36781"
+          },
+          {
+            "description": "Stats subject",
+            "enum": [
+              "players",
+              "teams"
+            ],
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string",
+            "x-example": "players"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob league stat categories and seasons",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/table": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the league standings and the upstream table views, including all, home, away, form, and expected-goals tables. League ids are discoverable from /fotmob/leagues.",
+        "operationId": "fotmob-table",
+        "parameters": [
+          {
+            "description": "Numeric FotMob league id",
+            "in": "query",
+            "name": "league_id",
+            "required": true,
+            "type": "string",
+            "x-example": "47"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob league table",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/team": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns public team data and the sections currently available for that team, such as overview, table, fixtures, squad, stats, transfers, and history. Team ids can be found with /fotmob/search. The upstream section set varies by team. For older fixtures, pass fixtures.previousFixturesUrl to /fotmob/team-fixtures.",
+        "operationId": "fotmob-team",
+        "parameters": [
+          {
+            "description": "Numeric FotMob team id",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "9825"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob team details",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/team-fixtures": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of older team matches. Start with the fixtures.previousFixturesUrl cursor from /fotmob/team, then pass each response's previous value as cursor until it is empty or null. Team ids are open-ended numeric ids discoverable through /fotmob/search.",
+        "operationId": "fotmob-team-fixtures",
+        "parameters": [
+          {
+            "description": "Numeric FotMob team id",
+            "in": "query",
+            "name": "team_id",
+            "required": true,
+            "type": "string",
+            "x-example": "9825"
+          },
+          {
+            "description": "Opaque cursor copied from fixtures.previousFixturesUrl in /fotmob/team or previous in the preceding response",
+            "in": "query",
+            "name": "cursor",
+            "required": true,
+            "type": "string",
+            "x-example": "https://pub.fotmob.com/prod/db/api/team/9825/fixture-by-date?beforeTimestamp=1785607200"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob paginated team fixtures",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/team-news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the paginated article feed shown on a public FotMob team news page. Team ids can be found with /fotmob/search or /fotmob/team.",
+        "operationId": "fotmob-team-news",
+        "parameters": [
+          {
+            "description": "Numeric FotMob team id",
+            "in": "query",
+            "name": "team_id",
+            "required": true,
+            "type": "integer",
+            "x-example": 8456
+          },
+          {
+            "description": "Zero-based news offset from 0 through 10000",
+            "in": "query",
+            "maximum": 10000,
+            "minimum": 0,
+            "name": "start_index",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob team news",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/transfers": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns confirmed transfers, rumours, or popular transfers with the public transfer-center filters. Fee values are in EUR. Use fotmob/leagues and fotmob/search to discover league and team ids. The upstream returns 50 rows per page and caps its hit count at 10,000.",
+        "operationId": "fotmob-transfers",
+        "parameters": [
+          {
+            "default": "all",
+            "description": "Feed mode",
+            "enum": [
+              "all",
+              "rumours",
+              "popular"
+            ],
+            "in": "query",
+            "name": "mode",
+            "type": "string"
+          },
+          {
+            "default": 1,
+            "description": "One-based result page; 50 rows per page",
+            "in": "query",
+            "maximum": 200,
+            "minimum": 1,
+            "name": "page",
+            "type": "integer"
+          },
+          {
+            "default": "6months",
+            "description": "Time window",
+            "enum": [
+              "6months",
+              "1year",
+              "2years",
+              "3years"
+            ],
+            "in": "query",
+            "name": "last",
+            "type": "string"
+          },
+          {
+            "default": "all",
+            "description": "Transfer direction; applied when league_ids or team_ids is supplied",
+            "enum": [
+              "all",
+              "in",
+              "out"
+            ],
+            "in": "query",
+            "name": "direction",
+            "type": "string"
+          },
+          {
+            "description": "Minimum transfer fee in EUR",
+            "in": "query",
+            "minimum": 0,
+            "name": "min_fee",
+            "type": "integer"
+          },
+          {
+            "description": "Maximum transfer fee in EUR",
+            "in": "query",
+            "minimum": 0,
+            "name": "max_fee",
+            "type": "integer"
+          },
+          {
+            "description": "Comma-separated numeric FotMob league ids, up to 50; discover with /fotmob/leagues",
+            "in": "query",
+            "name": "league_ids",
+            "type": "string",
+            "x-example": "47"
+          },
+          {
+            "description": "Comma-separated numeric FotMob team ids, up to 50; discover with /fotmob/search",
+            "in": "query",
+            "name": "team_ids",
+            "type": "string",
+            "x-example": "8456"
+          },
+          {
+            "default": "lastModified",
+            "description": "Sort column",
+            "enum": [
+              "lastModified",
+              "fee",
+              "date",
+              "name",
+              "fromClubName",
+              "toClubName"
+            ],
+            "in": "query",
+            "name": "order_by",
+            "type": "string"
+          },
+          {
+            "default": false,
+            "description": "Exclude contract-extension records",
+            "in": "query",
+            "name": "exclude_extensions",
+            "type": "boolean"
+          },
+          {
+            "default": false,
+            "description": "Return only likely rumours; mode must be rumours",
+            "in": "query",
+            "name": "likely_only",
+            "type": "boolean"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob transfer center",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/trending-news": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the five-story Trending shelf shown on FotMob's public News page. Items are curated previews and may overlap the global latest-news feed; the upstream list is dynamic. No locale or country parameter is exposed because the complete accepted value space is not pinned.",
+        "operationId": "fotmob-trending-news",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.newsListResponseDoc"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob trending football news",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/trending-searches": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FotMob's current grouped trending suggestions for all entities, players, teams, and leagues. The feed is dynamic and may vary by the upstream's inferred region; no region or category parameter is exposed.",
+        "operationId": "fotmob-trending-searches",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob trending search suggestions",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/tv-guide": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the public seven-day football broadcast schedule for a country, with local schedule times. Discover all accepted country codes from /fotmob/tv-guide-countries. Timezone defaults to UTC.",
+        "operationId": "fotmob-tv-guide",
+        "parameters": [
+          {
+            "description": "Market code from /fotmob/tv-guide-countries",
+            "enum": [
+              "us",
+              "se",
+              "gb",
+              "de",
+              "no",
+              "es",
+              "mx",
+              "ar",
+              "bo",
+              "cl",
+              "co",
+              "cr",
+              "ec",
+              "gt",
+              "hn",
+              "ni",
+              "pa",
+              "py",
+              "pe",
+              "uy",
+              "ve",
+              "da",
+              "ca",
+              "au",
+              "at",
+              "be",
+              "bg",
+              "hr",
+              "cy",
+              "cz",
+              "ee",
+              "fi",
+              "fr",
+              "gr",
+              "hu",
+              "is",
+              "ie",
+              "il",
+              "it",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru",
+              "ch",
+              "tr",
+              "za",
+              "br",
+              "in",
+              "me",
+              "id",
+              "th",
+              "mm",
+              "al",
+              "az",
+              "bl",
+              "ba",
+              "ks",
+              "la",
+              "li",
+              "mk",
+              "rs",
+              "sk",
+              "ua",
+              "essv",
+              "nz",
+              "bd",
+              "cn",
+              "gh",
+              "hk",
+              "jp",
+              "kr",
+              "ma",
+              "mt",
+              "my",
+              "ng",
+              "ph",
+              "pk",
+              "sg",
+              "si",
+              "tz"
+            ],
+            "in": "query",
+            "name": "country",
+            "required": true,
+            "type": "string",
+            "x-example": "us"
+          },
+          {
+            "description": "IANA timezone for local times",
+            "in": "query",
+            "name": "timezone",
+            "type": "string",
+            "x-example": "America/New_York"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob football TV guide",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/tv-guide-channels": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Discovers channels attached to matches in the selected country's current seven-day public TV guide window. Use the country directory to discover the complete country code set.",
+        "operationId": "fotmob-tv-guide-channels",
+        "parameters": [
+          {
+            "description": "Market code from /fotmob/tv-guide-countries",
+            "enum": [
+              "us",
+              "se",
+              "gb",
+              "de",
+              "no",
+              "es",
+              "mx",
+              "ar",
+              "bo",
+              "cl",
+              "co",
+              "cr",
+              "ec",
+              "gt",
+              "hn",
+              "ni",
+              "pa",
+              "py",
+              "pe",
+              "uy",
+              "ve",
+              "da",
+              "ca",
+              "au",
+              "at",
+              "be",
+              "bg",
+              "hr",
+              "cy",
+              "cz",
+              "ee",
+              "fi",
+              "fr",
+              "gr",
+              "hu",
+              "is",
+              "ie",
+              "il",
+              "it",
+              "nl",
+              "pl",
+              "pt",
+              "ro",
+              "ru",
+              "ch",
+              "tr",
+              "za",
+              "br",
+              "in",
+              "me",
+              "id",
+              "th",
+              "mm",
+              "al",
+              "az",
+              "bl",
+              "ba",
+              "ks",
+              "la",
+              "li",
+              "mk",
+              "rs",
+              "sk",
+              "ua",
+              "essv",
+              "nz",
+              "bd",
+              "cn",
+              "gh",
+              "hk",
+              "jp",
+              "kr",
+              "ma",
+              "mt",
+              "my",
+              "ng",
+              "ph",
+              "pk",
+              "sg",
+              "si",
+              "tz"
+            ],
+            "in": "query",
+            "name": "country",
+            "required": true,
+            "type": "string",
+            "x-example": "us"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob TV guide channels",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    },
+    "/fotmob/tv-guide-countries": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Lists all country codes exposed by FotMob's public football TV guide country selector.",
+        "operationId": "fotmob-tv-guide-countries",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/fotmob.responseDoc"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FotMob TV guide country directory",
+        "tags": [
+          "fotmob"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "fotmob"
+    }
+  ]
+}
