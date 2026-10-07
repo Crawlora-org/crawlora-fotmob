@@ -385,37 +385,192 @@ FotmobTvGuideCountriesParams = TypedDict('FotmobTvGuideCountriesParams', {
 }, total=False)
 
 class FotmobGroup:
-    def audio_matches(self, **params: Unpack[FotmobAudioMatchesParams]) -> FotmobAudioMatchesResponse: ...
-    def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsParams]) -> FotmobFifaRankingPeriodsResponse: ...
-    def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsParams]) -> FotmobFifaRankingsResponse: ...
-    def latest_news(self, **params: Unpack[FotmobLatestNewsParams]) -> FotmobLatestNewsResponse: ...
-    def league(self, **params: Unpack[FotmobLeagueParams]) -> FotmobLeagueResponse: ...
-    def leagues(self, **params: Unpack[FotmobLeaguesParams]) -> FotmobLeaguesResponse: ...
-    def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersParams]) -> FotmobLineupBuilderPlayersResponse: ...
-    def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamParams]) -> FotmobLineupBuilderTeamResponse: ...
-    def match(self, **params: Unpack[FotmobMatchParams]) -> FotmobMatchResponse: ...
-    def match_media(self, **params: Unpack[FotmobMatchMediaParams]) -> FotmobMatchMediaResponse: ...
-    def matches(self, **params: Unpack[FotmobMatchesParams]) -> FotmobMatchesResponse: ...
-    def news(self, **params: Unpack[FotmobNewsParams]) -> FotmobNewsResponse: ...
-    def news_article(self, **params: Unpack[FotmobNewsArticleParams]) -> FotmobNewsArticleResponse: ...
-    def player(self, **params: Unpack[FotmobPlayerParams]) -> FotmobPlayerResponse: ...
-    def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsParams]) -> FotmobPlayerMatchStatsResponse: ...
-    def player_matches(self, **params: Unpack[FotmobPlayerMatchesParams]) -> FotmobPlayerMatchesResponse: ...
-    def player_stats(self, **params: Unpack[FotmobPlayerStatsParams]) -> FotmobPlayerStatsResponse: ...
-    def search(self, **params: Unpack[FotmobSearchParams]) -> FotmobSearchResponse: ...
-    def seasons(self, **params: Unpack[FotmobSeasonsParams]) -> FotmobSeasonsResponse: ...
-    def stats(self, **params: Unpack[FotmobStatsParams]) -> FotmobStatsResponse: ...
-    def stats_categories(self, **params: Unpack[FotmobStatsCategoriesParams]) -> FotmobStatsCategoriesResponse: ...
-    def table(self, **params: Unpack[FotmobTableParams]) -> FotmobTableResponse: ...
-    def team(self, **params: Unpack[FotmobTeamParams]) -> FotmobTeamResponse: ...
-    def team_fixtures(self, **params: Unpack[FotmobTeamFixturesParams]) -> FotmobTeamFixturesResponse: ...
-    def team_news(self, **params: Unpack[FotmobTeamNewsParams]) -> FotmobTeamNewsResponse: ...
-    def transfers(self, **params: Unpack[FotmobTransfersParams]) -> FotmobTransfersResponse: ...
-    def trending_news(self, **params: Unpack[FotmobTrendingNewsParams]) -> FotmobTrendingNewsResponse: ...
-    def trending_searches(self, **params: Unpack[FotmobTrendingSearchesParams]) -> FotmobTrendingSearchesResponse: ...
-    def tv_guide(self, **params: Unpack[FotmobTvGuideParams]) -> FotmobTvGuideResponse: ...
-    def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsParams]) -> FotmobTvGuideChannelsResponse: ...
-    def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesParams]) -> FotmobTvGuideCountriesResponse: ...
+    @overload
+    def audio_matches(self, **params: Unpack[FotmobAudioMatchesStreamParams]) -> BinaryIO: ...
+    @overload
+    def audio_matches(self, **params: Unpack[FotmobAudioMatchesTextResponseParams]) -> str: ...
+    @overload
+    def audio_matches(self, **params: Unpack[FotmobAudioMatchesDefaultParams]) -> FotmobAudioMatchesResponse: ...
+    @overload
+    def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsStreamParams]) -> BinaryIO: ...
+    @overload
+    def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsTextResponseParams]) -> str: ...
+    @overload
+    def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsDefaultParams]) -> FotmobFifaRankingPeriodsResponse: ...
+    @overload
+    def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsStreamParams]) -> BinaryIO: ...
+    @overload
+    def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsTextResponseParams]) -> str: ...
+    @overload
+    def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsDefaultParams]) -> FotmobFifaRankingsResponse: ...
+    @overload
+    def latest_news(self, **params: Unpack[FotmobLatestNewsStreamParams]) -> BinaryIO: ...
+    @overload
+    def latest_news(self, **params: Unpack[FotmobLatestNewsTextResponseParams]) -> str: ...
+    @overload
+    def latest_news(self, **params: Unpack[FotmobLatestNewsDefaultParams]) -> FotmobLatestNewsResponse: ...
+    @overload
+    def league(self, **params: Unpack[FotmobLeagueStreamParams]) -> BinaryIO: ...
+    @overload
+    def league(self, **params: Unpack[FotmobLeagueTextResponseParams]) -> str: ...
+    @overload
+    def league(self, **params: Unpack[FotmobLeagueDefaultParams]) -> FotmobLeagueResponse: ...
+    @overload
+    def leagues(self, **params: Unpack[FotmobLeaguesStreamParams]) -> BinaryIO: ...
+    @overload
+    def leagues(self, **params: Unpack[FotmobLeaguesTextResponseParams]) -> str: ...
+    @overload
+    def leagues(self, **params: Unpack[FotmobLeaguesDefaultParams]) -> FotmobLeaguesResponse: ...
+    @overload
+    def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersStreamParams]) -> BinaryIO: ...
+    @overload
+    def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersTextResponseParams]) -> str: ...
+    @overload
+    def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersDefaultParams]) -> FotmobLineupBuilderPlayersResponse: ...
+    @overload
+    def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamStreamParams]) -> BinaryIO: ...
+    @overload
+    def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamTextResponseParams]) -> str: ...
+    @overload
+    def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamDefaultParams]) -> FotmobLineupBuilderTeamResponse: ...
+    @overload
+    def match(self, **params: Unpack[FotmobMatchStreamParams]) -> BinaryIO: ...
+    @overload
+    def match(self, **params: Unpack[FotmobMatchTextResponseParams]) -> str: ...
+    @overload
+    def match(self, **params: Unpack[FotmobMatchDefaultParams]) -> FotmobMatchResponse: ...
+    @overload
+    def match_media(self, **params: Unpack[FotmobMatchMediaStreamParams]) -> BinaryIO: ...
+    @overload
+    def match_media(self, **params: Unpack[FotmobMatchMediaTextResponseParams]) -> str: ...
+    @overload
+    def match_media(self, **params: Unpack[FotmobMatchMediaDefaultParams]) -> FotmobMatchMediaResponse: ...
+    @overload
+    def matches(self, **params: Unpack[FotmobMatchesStreamParams]) -> BinaryIO: ...
+    @overload
+    def matches(self, **params: Unpack[FotmobMatchesTextResponseParams]) -> str: ...
+    @overload
+    def matches(self, **params: Unpack[FotmobMatchesDefaultParams]) -> FotmobMatchesResponse: ...
+    @overload
+    def news(self, **params: Unpack[FotmobNewsStreamParams]) -> BinaryIO: ...
+    @overload
+    def news(self, **params: Unpack[FotmobNewsTextResponseParams]) -> str: ...
+    @overload
+    def news(self, **params: Unpack[FotmobNewsDefaultParams]) -> FotmobNewsResponse: ...
+    @overload
+    def news_article(self, **params: Unpack[FotmobNewsArticleStreamParams]) -> BinaryIO: ...
+    @overload
+    def news_article(self, **params: Unpack[FotmobNewsArticleTextResponseParams]) -> str: ...
+    @overload
+    def news_article(self, **params: Unpack[FotmobNewsArticleDefaultParams]) -> FotmobNewsArticleResponse: ...
+    @overload
+    def player(self, **params: Unpack[FotmobPlayerStreamParams]) -> BinaryIO: ...
+    @overload
+    def player(self, **params: Unpack[FotmobPlayerTextResponseParams]) -> str: ...
+    @overload
+    def player(self, **params: Unpack[FotmobPlayerDefaultParams]) -> FotmobPlayerResponse: ...
+    @overload
+    def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsStreamParams]) -> BinaryIO: ...
+    @overload
+    def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsTextResponseParams]) -> str: ...
+    @overload
+    def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsDefaultParams]) -> FotmobPlayerMatchStatsResponse: ...
+    @overload
+    def player_matches(self, **params: Unpack[FotmobPlayerMatchesStreamParams]) -> BinaryIO: ...
+    @overload
+    def player_matches(self, **params: Unpack[FotmobPlayerMatchesTextResponseParams]) -> str: ...
+    @overload
+    def player_matches(self, **params: Unpack[FotmobPlayerMatchesDefaultParams]) -> FotmobPlayerMatchesResponse: ...
+    @overload
+    def player_stats(self, **params: Unpack[FotmobPlayerStatsStreamParams]) -> BinaryIO: ...
+    @overload
+    def player_stats(self, **params: Unpack[FotmobPlayerStatsTextResponseParams]) -> str: ...
+    @overload
+    def player_stats(self, **params: Unpack[FotmobPlayerStatsDefaultParams]) -> FotmobPlayerStatsResponse: ...
+    @overload
+    def search(self, **params: Unpack[FotmobSearchStreamParams]) -> BinaryIO: ...
+    @overload
+    def search(self, **params: Unpack[FotmobSearchTextResponseParams]) -> str: ...
+    @overload
+    def search(self, **params: Unpack[FotmobSearchDefaultParams]) -> FotmobSearchResponse: ...
+    @overload
+    def seasons(self, **params: Unpack[FotmobSeasonsStreamParams]) -> BinaryIO: ...
+    @overload
+    def seasons(self, **params: Unpack[FotmobSeasonsTextResponseParams]) -> str: ...
+    @overload
+    def seasons(self, **params: Unpack[FotmobSeasonsDefaultParams]) -> FotmobSeasonsResponse: ...
+    @overload
+    def stats(self, **params: Unpack[FotmobStatsStreamParams]) -> BinaryIO: ...
+    @overload
+    def stats(self, **params: Unpack[FotmobStatsTextResponseParams]) -> str: ...
+    @overload
+    def stats(self, **params: Unpack[FotmobStatsDefaultParams]) -> FotmobStatsResponse: ...
+    @overload
+    def stats_categories(self, **params: Unpack[FotmobStatsCategoriesStreamParams]) -> BinaryIO: ...
+    @overload
+    def stats_categories(self, **params: Unpack[FotmobStatsCategoriesTextResponseParams]) -> str: ...
+    @overload
+    def stats_categories(self, **params: Unpack[FotmobStatsCategoriesDefaultParams]) -> FotmobStatsCategoriesResponse: ...
+    @overload
+    def table(self, **params: Unpack[FotmobTableStreamParams]) -> BinaryIO: ...
+    @overload
+    def table(self, **params: Unpack[FotmobTableTextResponseParams]) -> str: ...
+    @overload
+    def table(self, **params: Unpack[FotmobTableDefaultParams]) -> FotmobTableResponse: ...
+    @overload
+    def team(self, **params: Unpack[FotmobTeamStreamParams]) -> BinaryIO: ...
+    @overload
+    def team(self, **params: Unpack[FotmobTeamTextResponseParams]) -> str: ...
+    @overload
+    def team(self, **params: Unpack[FotmobTeamDefaultParams]) -> FotmobTeamResponse: ...
+    @overload
+    def team_fixtures(self, **params: Unpack[FotmobTeamFixturesStreamParams]) -> BinaryIO: ...
+    @overload
+    def team_fixtures(self, **params: Unpack[FotmobTeamFixturesTextResponseParams]) -> str: ...
+    @overload
+    def team_fixtures(self, **params: Unpack[FotmobTeamFixturesDefaultParams]) -> FotmobTeamFixturesResponse: ...
+    @overload
+    def team_news(self, **params: Unpack[FotmobTeamNewsStreamParams]) -> BinaryIO: ...
+    @overload
+    def team_news(self, **params: Unpack[FotmobTeamNewsTextResponseParams]) -> str: ...
+    @overload
+    def team_news(self, **params: Unpack[FotmobTeamNewsDefaultParams]) -> FotmobTeamNewsResponse: ...
+    @overload
+    def transfers(self, **params: Unpack[FotmobTransfersStreamParams]) -> BinaryIO: ...
+    @overload
+    def transfers(self, **params: Unpack[FotmobTransfersTextResponseParams]) -> str: ...
+    @overload
+    def transfers(self, **params: Unpack[FotmobTransfersDefaultParams]) -> FotmobTransfersResponse: ...
+    @overload
+    def trending_news(self, **params: Unpack[FotmobTrendingNewsStreamParams]) -> BinaryIO: ...
+    @overload
+    def trending_news(self, **params: Unpack[FotmobTrendingNewsTextResponseParams]) -> str: ...
+    @overload
+    def trending_news(self, **params: Unpack[FotmobTrendingNewsDefaultParams]) -> FotmobTrendingNewsResponse: ...
+    @overload
+    def trending_searches(self, **params: Unpack[FotmobTrendingSearchesStreamParams]) -> BinaryIO: ...
+    @overload
+    def trending_searches(self, **params: Unpack[FotmobTrendingSearchesTextResponseParams]) -> str: ...
+    @overload
+    def trending_searches(self, **params: Unpack[FotmobTrendingSearchesDefaultParams]) -> FotmobTrendingSearchesResponse: ...
+    @overload
+    def tv_guide(self, **params: Unpack[FotmobTvGuideStreamParams]) -> BinaryIO: ...
+    @overload
+    def tv_guide(self, **params: Unpack[FotmobTvGuideTextResponseParams]) -> str: ...
+    @overload
+    def tv_guide(self, **params: Unpack[FotmobTvGuideDefaultParams]) -> FotmobTvGuideResponse: ...
+    @overload
+    def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsStreamParams]) -> BinaryIO: ...
+    @overload
+    def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsTextResponseParams]) -> str: ...
+    @overload
+    def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsDefaultParams]) -> FotmobTvGuideChannelsResponse: ...
+    @overload
+    def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesStreamParams]) -> BinaryIO: ...
+    @overload
+    def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesTextResponseParams]) -> str: ...
+    @overload
+    def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesDefaultParams]) -> FotmobTvGuideCountriesResponse: ...
 
 OperationId = Literal[
     'fotmob-audio-matches',
@@ -1328,193 +1483,192 @@ class AsyncCrawloraClient:
 
 class FotMobClient(CrawloraClient):
     def __enter__(self) -> FotMobClient: ...
-    fotmob: FotmobGroup
     @overload
     def audio_matches(self, **params: Unpack[FotmobAudioMatchesStreamParams]) -> BinaryIO: ...
     @overload
     def audio_matches(self, **params: Unpack[FotmobAudioMatchesTextResponseParams]) -> str: ...
     @overload
-    def audio_matches(self, **params: Unpack[FotmobAudioMatchesParams]) -> FotmobAudioMatchesResponse: ...
+    def audio_matches(self, **params: Unpack[FotmobAudioMatchesDefaultParams]) -> FotmobAudioMatchesResponse: ...
     @overload
     def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsStreamParams]) -> BinaryIO: ...
     @overload
     def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsTextResponseParams]) -> str: ...
     @overload
-    def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsParams]) -> FotmobFifaRankingPeriodsResponse: ...
+    def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsDefaultParams]) -> FotmobFifaRankingPeriodsResponse: ...
     @overload
     def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsStreamParams]) -> BinaryIO: ...
     @overload
     def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsTextResponseParams]) -> str: ...
     @overload
-    def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsParams]) -> FotmobFifaRankingsResponse: ...
+    def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsDefaultParams]) -> FotmobFifaRankingsResponse: ...
     @overload
     def latest_news(self, **params: Unpack[FotmobLatestNewsStreamParams]) -> BinaryIO: ...
     @overload
     def latest_news(self, **params: Unpack[FotmobLatestNewsTextResponseParams]) -> str: ...
     @overload
-    def latest_news(self, **params: Unpack[FotmobLatestNewsParams]) -> FotmobLatestNewsResponse: ...
+    def latest_news(self, **params: Unpack[FotmobLatestNewsDefaultParams]) -> FotmobLatestNewsResponse: ...
     @overload
     def league(self, **params: Unpack[FotmobLeagueStreamParams]) -> BinaryIO: ...
     @overload
     def league(self, **params: Unpack[FotmobLeagueTextResponseParams]) -> str: ...
     @overload
-    def league(self, **params: Unpack[FotmobLeagueParams]) -> FotmobLeagueResponse: ...
+    def league(self, **params: Unpack[FotmobLeagueDefaultParams]) -> FotmobLeagueResponse: ...
     @overload
     def leagues(self, **params: Unpack[FotmobLeaguesStreamParams]) -> BinaryIO: ...
     @overload
     def leagues(self, **params: Unpack[FotmobLeaguesTextResponseParams]) -> str: ...
     @overload
-    def leagues(self, **params: Unpack[FotmobLeaguesParams]) -> FotmobLeaguesResponse: ...
+    def leagues(self, **params: Unpack[FotmobLeaguesDefaultParams]) -> FotmobLeaguesResponse: ...
     @overload
     def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersStreamParams]) -> BinaryIO: ...
     @overload
     def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersTextResponseParams]) -> str: ...
     @overload
-    def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersParams]) -> FotmobLineupBuilderPlayersResponse: ...
+    def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersDefaultParams]) -> FotmobLineupBuilderPlayersResponse: ...
     @overload
     def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamStreamParams]) -> BinaryIO: ...
     @overload
     def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamTextResponseParams]) -> str: ...
     @overload
-    def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamParams]) -> FotmobLineupBuilderTeamResponse: ...
+    def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamDefaultParams]) -> FotmobLineupBuilderTeamResponse: ...
     @overload
     def match(self, **params: Unpack[FotmobMatchStreamParams]) -> BinaryIO: ...
     @overload
     def match(self, **params: Unpack[FotmobMatchTextResponseParams]) -> str: ...
     @overload
-    def match(self, **params: Unpack[FotmobMatchParams]) -> FotmobMatchResponse: ...
+    def match(self, **params: Unpack[FotmobMatchDefaultParams]) -> FotmobMatchResponse: ...
     @overload
     def match_media(self, **params: Unpack[FotmobMatchMediaStreamParams]) -> BinaryIO: ...
     @overload
     def match_media(self, **params: Unpack[FotmobMatchMediaTextResponseParams]) -> str: ...
     @overload
-    def match_media(self, **params: Unpack[FotmobMatchMediaParams]) -> FotmobMatchMediaResponse: ...
+    def match_media(self, **params: Unpack[FotmobMatchMediaDefaultParams]) -> FotmobMatchMediaResponse: ...
     @overload
     def matches(self, **params: Unpack[FotmobMatchesStreamParams]) -> BinaryIO: ...
     @overload
     def matches(self, **params: Unpack[FotmobMatchesTextResponseParams]) -> str: ...
     @overload
-    def matches(self, **params: Unpack[FotmobMatchesParams]) -> FotmobMatchesResponse: ...
+    def matches(self, **params: Unpack[FotmobMatchesDefaultParams]) -> FotmobMatchesResponse: ...
     @overload
     def news(self, **params: Unpack[FotmobNewsStreamParams]) -> BinaryIO: ...
     @overload
     def news(self, **params: Unpack[FotmobNewsTextResponseParams]) -> str: ...
     @overload
-    def news(self, **params: Unpack[FotmobNewsParams]) -> FotmobNewsResponse: ...
+    def news(self, **params: Unpack[FotmobNewsDefaultParams]) -> FotmobNewsResponse: ...
     @overload
     def news_article(self, **params: Unpack[FotmobNewsArticleStreamParams]) -> BinaryIO: ...
     @overload
     def news_article(self, **params: Unpack[FotmobNewsArticleTextResponseParams]) -> str: ...
     @overload
-    def news_article(self, **params: Unpack[FotmobNewsArticleParams]) -> FotmobNewsArticleResponse: ...
+    def news_article(self, **params: Unpack[FotmobNewsArticleDefaultParams]) -> FotmobNewsArticleResponse: ...
     @overload
     def player(self, **params: Unpack[FotmobPlayerStreamParams]) -> BinaryIO: ...
     @overload
     def player(self, **params: Unpack[FotmobPlayerTextResponseParams]) -> str: ...
     @overload
-    def player(self, **params: Unpack[FotmobPlayerParams]) -> FotmobPlayerResponse: ...
+    def player(self, **params: Unpack[FotmobPlayerDefaultParams]) -> FotmobPlayerResponse: ...
     @overload
     def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsStreamParams]) -> BinaryIO: ...
     @overload
     def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsTextResponseParams]) -> str: ...
     @overload
-    def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsParams]) -> FotmobPlayerMatchStatsResponse: ...
+    def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsDefaultParams]) -> FotmobPlayerMatchStatsResponse: ...
     @overload
     def player_matches(self, **params: Unpack[FotmobPlayerMatchesStreamParams]) -> BinaryIO: ...
     @overload
     def player_matches(self, **params: Unpack[FotmobPlayerMatchesTextResponseParams]) -> str: ...
     @overload
-    def player_matches(self, **params: Unpack[FotmobPlayerMatchesParams]) -> FotmobPlayerMatchesResponse: ...
+    def player_matches(self, **params: Unpack[FotmobPlayerMatchesDefaultParams]) -> FotmobPlayerMatchesResponse: ...
     @overload
     def player_stats(self, **params: Unpack[FotmobPlayerStatsStreamParams]) -> BinaryIO: ...
     @overload
     def player_stats(self, **params: Unpack[FotmobPlayerStatsTextResponseParams]) -> str: ...
     @overload
-    def player_stats(self, **params: Unpack[FotmobPlayerStatsParams]) -> FotmobPlayerStatsResponse: ...
+    def player_stats(self, **params: Unpack[FotmobPlayerStatsDefaultParams]) -> FotmobPlayerStatsResponse: ...
     @overload
     def search(self, **params: Unpack[FotmobSearchStreamParams]) -> BinaryIO: ...
     @overload
     def search(self, **params: Unpack[FotmobSearchTextResponseParams]) -> str: ...
     @overload
-    def search(self, **params: Unpack[FotmobSearchParams]) -> FotmobSearchResponse: ...
+    def search(self, **params: Unpack[FotmobSearchDefaultParams]) -> FotmobSearchResponse: ...
     @overload
     def seasons(self, **params: Unpack[FotmobSeasonsStreamParams]) -> BinaryIO: ...
     @overload
     def seasons(self, **params: Unpack[FotmobSeasonsTextResponseParams]) -> str: ...
     @overload
-    def seasons(self, **params: Unpack[FotmobSeasonsParams]) -> FotmobSeasonsResponse: ...
+    def seasons(self, **params: Unpack[FotmobSeasonsDefaultParams]) -> FotmobSeasonsResponse: ...
     @overload
     def stats(self, **params: Unpack[FotmobStatsStreamParams]) -> BinaryIO: ...
     @overload
     def stats(self, **params: Unpack[FotmobStatsTextResponseParams]) -> str: ...
     @overload
-    def stats(self, **params: Unpack[FotmobStatsParams]) -> FotmobStatsResponse: ...
+    def stats(self, **params: Unpack[FotmobStatsDefaultParams]) -> FotmobStatsResponse: ...
     @overload
     def stats_categories(self, **params: Unpack[FotmobStatsCategoriesStreamParams]) -> BinaryIO: ...
     @overload
     def stats_categories(self, **params: Unpack[FotmobStatsCategoriesTextResponseParams]) -> str: ...
     @overload
-    def stats_categories(self, **params: Unpack[FotmobStatsCategoriesParams]) -> FotmobStatsCategoriesResponse: ...
+    def stats_categories(self, **params: Unpack[FotmobStatsCategoriesDefaultParams]) -> FotmobStatsCategoriesResponse: ...
     @overload
     def table(self, **params: Unpack[FotmobTableStreamParams]) -> BinaryIO: ...
     @overload
     def table(self, **params: Unpack[FotmobTableTextResponseParams]) -> str: ...
     @overload
-    def table(self, **params: Unpack[FotmobTableParams]) -> FotmobTableResponse: ...
+    def table(self, **params: Unpack[FotmobTableDefaultParams]) -> FotmobTableResponse: ...
     @overload
     def team(self, **params: Unpack[FotmobTeamStreamParams]) -> BinaryIO: ...
     @overload
     def team(self, **params: Unpack[FotmobTeamTextResponseParams]) -> str: ...
     @overload
-    def team(self, **params: Unpack[FotmobTeamParams]) -> FotmobTeamResponse: ...
+    def team(self, **params: Unpack[FotmobTeamDefaultParams]) -> FotmobTeamResponse: ...
     @overload
     def team_fixtures(self, **params: Unpack[FotmobTeamFixturesStreamParams]) -> BinaryIO: ...
     @overload
     def team_fixtures(self, **params: Unpack[FotmobTeamFixturesTextResponseParams]) -> str: ...
     @overload
-    def team_fixtures(self, **params: Unpack[FotmobTeamFixturesParams]) -> FotmobTeamFixturesResponse: ...
+    def team_fixtures(self, **params: Unpack[FotmobTeamFixturesDefaultParams]) -> FotmobTeamFixturesResponse: ...
     @overload
     def team_news(self, **params: Unpack[FotmobTeamNewsStreamParams]) -> BinaryIO: ...
     @overload
     def team_news(self, **params: Unpack[FotmobTeamNewsTextResponseParams]) -> str: ...
     @overload
-    def team_news(self, **params: Unpack[FotmobTeamNewsParams]) -> FotmobTeamNewsResponse: ...
+    def team_news(self, **params: Unpack[FotmobTeamNewsDefaultParams]) -> FotmobTeamNewsResponse: ...
     @overload
     def transfers(self, **params: Unpack[FotmobTransfersStreamParams]) -> BinaryIO: ...
     @overload
     def transfers(self, **params: Unpack[FotmobTransfersTextResponseParams]) -> str: ...
     @overload
-    def transfers(self, **params: Unpack[FotmobTransfersParams]) -> FotmobTransfersResponse: ...
+    def transfers(self, **params: Unpack[FotmobTransfersDefaultParams]) -> FotmobTransfersResponse: ...
     @overload
     def trending_news(self, **params: Unpack[FotmobTrendingNewsStreamParams]) -> BinaryIO: ...
     @overload
     def trending_news(self, **params: Unpack[FotmobTrendingNewsTextResponseParams]) -> str: ...
     @overload
-    def trending_news(self, **params: Unpack[FotmobTrendingNewsParams]) -> FotmobTrendingNewsResponse: ...
+    def trending_news(self, **params: Unpack[FotmobTrendingNewsDefaultParams]) -> FotmobTrendingNewsResponse: ...
     @overload
     def trending_searches(self, **params: Unpack[FotmobTrendingSearchesStreamParams]) -> BinaryIO: ...
     @overload
     def trending_searches(self, **params: Unpack[FotmobTrendingSearchesTextResponseParams]) -> str: ...
     @overload
-    def trending_searches(self, **params: Unpack[FotmobTrendingSearchesParams]) -> FotmobTrendingSearchesResponse: ...
+    def trending_searches(self, **params: Unpack[FotmobTrendingSearchesDefaultParams]) -> FotmobTrendingSearchesResponse: ...
     @overload
     def tv_guide(self, **params: Unpack[FotmobTvGuideStreamParams]) -> BinaryIO: ...
     @overload
     def tv_guide(self, **params: Unpack[FotmobTvGuideTextResponseParams]) -> str: ...
     @overload
-    def tv_guide(self, **params: Unpack[FotmobTvGuideParams]) -> FotmobTvGuideResponse: ...
+    def tv_guide(self, **params: Unpack[FotmobTvGuideDefaultParams]) -> FotmobTvGuideResponse: ...
     @overload
     def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsStreamParams]) -> BinaryIO: ...
     @overload
     def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsTextResponseParams]) -> str: ...
     @overload
-    def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsParams]) -> FotmobTvGuideChannelsResponse: ...
+    def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsDefaultParams]) -> FotmobTvGuideChannelsResponse: ...
     @overload
     def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesStreamParams]) -> BinaryIO: ...
     @overload
     def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesTextResponseParams]) -> str: ...
     @overload
-    def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesParams]) -> FotmobTvGuideCountriesResponse: ...
+    def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesDefaultParams]) -> FotmobTvGuideCountriesResponse: ...
 
 class AsyncFotMobClient(AsyncCrawloraClient):
     async def __aenter__(self) -> AsyncFotMobClient: ...
@@ -1524,187 +1678,187 @@ class AsyncFotMobClient(AsyncCrawloraClient):
     @overload
     async def audio_matches(self, **params: Unpack[FotmobAudioMatchesTextResponseParams]) -> str: ...
     @overload
-    async def audio_matches(self, **params: Unpack[FotmobAudioMatchesParams]) -> FotmobAudioMatchesResponse: ...
+    async def audio_matches(self, **params: Unpack[FotmobAudioMatchesDefaultParams]) -> FotmobAudioMatchesResponse: ...
     @overload
     async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsStreamParams]) -> BinaryIO: ...
     @overload
     async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsTextResponseParams]) -> str: ...
     @overload
-    async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsParams]) -> FotmobFifaRankingPeriodsResponse: ...
+    async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsDefaultParams]) -> FotmobFifaRankingPeriodsResponse: ...
     @overload
     async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsStreamParams]) -> BinaryIO: ...
     @overload
     async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsTextResponseParams]) -> str: ...
     @overload
-    async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsParams]) -> FotmobFifaRankingsResponse: ...
+    async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsDefaultParams]) -> FotmobFifaRankingsResponse: ...
     @overload
     async def latest_news(self, **params: Unpack[FotmobLatestNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def latest_news(self, **params: Unpack[FotmobLatestNewsTextResponseParams]) -> str: ...
     @overload
-    async def latest_news(self, **params: Unpack[FotmobLatestNewsParams]) -> FotmobLatestNewsResponse: ...
+    async def latest_news(self, **params: Unpack[FotmobLatestNewsDefaultParams]) -> FotmobLatestNewsResponse: ...
     @overload
     async def league(self, **params: Unpack[FotmobLeagueStreamParams]) -> BinaryIO: ...
     @overload
     async def league(self, **params: Unpack[FotmobLeagueTextResponseParams]) -> str: ...
     @overload
-    async def league(self, **params: Unpack[FotmobLeagueParams]) -> FotmobLeagueResponse: ...
+    async def league(self, **params: Unpack[FotmobLeagueDefaultParams]) -> FotmobLeagueResponse: ...
     @overload
     async def leagues(self, **params: Unpack[FotmobLeaguesStreamParams]) -> BinaryIO: ...
     @overload
     async def leagues(self, **params: Unpack[FotmobLeaguesTextResponseParams]) -> str: ...
     @overload
-    async def leagues(self, **params: Unpack[FotmobLeaguesParams]) -> FotmobLeaguesResponse: ...
+    async def leagues(self, **params: Unpack[FotmobLeaguesDefaultParams]) -> FotmobLeaguesResponse: ...
     @overload
     async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersStreamParams]) -> BinaryIO: ...
     @overload
     async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersTextResponseParams]) -> str: ...
     @overload
-    async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersParams]) -> FotmobLineupBuilderPlayersResponse: ...
+    async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersDefaultParams]) -> FotmobLineupBuilderPlayersResponse: ...
     @overload
     async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamStreamParams]) -> BinaryIO: ...
     @overload
     async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamTextResponseParams]) -> str: ...
     @overload
-    async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamParams]) -> FotmobLineupBuilderTeamResponse: ...
+    async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamDefaultParams]) -> FotmobLineupBuilderTeamResponse: ...
     @overload
     async def match(self, **params: Unpack[FotmobMatchStreamParams]) -> BinaryIO: ...
     @overload
     async def match(self, **params: Unpack[FotmobMatchTextResponseParams]) -> str: ...
     @overload
-    async def match(self, **params: Unpack[FotmobMatchParams]) -> FotmobMatchResponse: ...
+    async def match(self, **params: Unpack[FotmobMatchDefaultParams]) -> FotmobMatchResponse: ...
     @overload
     async def match_media(self, **params: Unpack[FotmobMatchMediaStreamParams]) -> BinaryIO: ...
     @overload
     async def match_media(self, **params: Unpack[FotmobMatchMediaTextResponseParams]) -> str: ...
     @overload
-    async def match_media(self, **params: Unpack[FotmobMatchMediaParams]) -> FotmobMatchMediaResponse: ...
+    async def match_media(self, **params: Unpack[FotmobMatchMediaDefaultParams]) -> FotmobMatchMediaResponse: ...
     @overload
     async def matches(self, **params: Unpack[FotmobMatchesStreamParams]) -> BinaryIO: ...
     @overload
     async def matches(self, **params: Unpack[FotmobMatchesTextResponseParams]) -> str: ...
     @overload
-    async def matches(self, **params: Unpack[FotmobMatchesParams]) -> FotmobMatchesResponse: ...
+    async def matches(self, **params: Unpack[FotmobMatchesDefaultParams]) -> FotmobMatchesResponse: ...
     @overload
     async def news(self, **params: Unpack[FotmobNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def news(self, **params: Unpack[FotmobNewsTextResponseParams]) -> str: ...
     @overload
-    async def news(self, **params: Unpack[FotmobNewsParams]) -> FotmobNewsResponse: ...
+    async def news(self, **params: Unpack[FotmobNewsDefaultParams]) -> FotmobNewsResponse: ...
     @overload
     async def news_article(self, **params: Unpack[FotmobNewsArticleStreamParams]) -> BinaryIO: ...
     @overload
     async def news_article(self, **params: Unpack[FotmobNewsArticleTextResponseParams]) -> str: ...
     @overload
-    async def news_article(self, **params: Unpack[FotmobNewsArticleParams]) -> FotmobNewsArticleResponse: ...
+    async def news_article(self, **params: Unpack[FotmobNewsArticleDefaultParams]) -> FotmobNewsArticleResponse: ...
     @overload
     async def player(self, **params: Unpack[FotmobPlayerStreamParams]) -> BinaryIO: ...
     @overload
     async def player(self, **params: Unpack[FotmobPlayerTextResponseParams]) -> str: ...
     @overload
-    async def player(self, **params: Unpack[FotmobPlayerParams]) -> FotmobPlayerResponse: ...
+    async def player(self, **params: Unpack[FotmobPlayerDefaultParams]) -> FotmobPlayerResponse: ...
     @overload
     async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsStreamParams]) -> BinaryIO: ...
     @overload
     async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsTextResponseParams]) -> str: ...
     @overload
-    async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsParams]) -> FotmobPlayerMatchStatsResponse: ...
+    async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsDefaultParams]) -> FotmobPlayerMatchStatsResponse: ...
     @overload
     async def player_matches(self, **params: Unpack[FotmobPlayerMatchesStreamParams]) -> BinaryIO: ...
     @overload
     async def player_matches(self, **params: Unpack[FotmobPlayerMatchesTextResponseParams]) -> str: ...
     @overload
-    async def player_matches(self, **params: Unpack[FotmobPlayerMatchesParams]) -> FotmobPlayerMatchesResponse: ...
+    async def player_matches(self, **params: Unpack[FotmobPlayerMatchesDefaultParams]) -> FotmobPlayerMatchesResponse: ...
     @overload
     async def player_stats(self, **params: Unpack[FotmobPlayerStatsStreamParams]) -> BinaryIO: ...
     @overload
     async def player_stats(self, **params: Unpack[FotmobPlayerStatsTextResponseParams]) -> str: ...
     @overload
-    async def player_stats(self, **params: Unpack[FotmobPlayerStatsParams]) -> FotmobPlayerStatsResponse: ...
+    async def player_stats(self, **params: Unpack[FotmobPlayerStatsDefaultParams]) -> FotmobPlayerStatsResponse: ...
     @overload
     async def search(self, **params: Unpack[FotmobSearchStreamParams]) -> BinaryIO: ...
     @overload
     async def search(self, **params: Unpack[FotmobSearchTextResponseParams]) -> str: ...
     @overload
-    async def search(self, **params: Unpack[FotmobSearchParams]) -> FotmobSearchResponse: ...
+    async def search(self, **params: Unpack[FotmobSearchDefaultParams]) -> FotmobSearchResponse: ...
     @overload
     async def seasons(self, **params: Unpack[FotmobSeasonsStreamParams]) -> BinaryIO: ...
     @overload
     async def seasons(self, **params: Unpack[FotmobSeasonsTextResponseParams]) -> str: ...
     @overload
-    async def seasons(self, **params: Unpack[FotmobSeasonsParams]) -> FotmobSeasonsResponse: ...
+    async def seasons(self, **params: Unpack[FotmobSeasonsDefaultParams]) -> FotmobSeasonsResponse: ...
     @overload
     async def stats(self, **params: Unpack[FotmobStatsStreamParams]) -> BinaryIO: ...
     @overload
     async def stats(self, **params: Unpack[FotmobStatsTextResponseParams]) -> str: ...
     @overload
-    async def stats(self, **params: Unpack[FotmobStatsParams]) -> FotmobStatsResponse: ...
+    async def stats(self, **params: Unpack[FotmobStatsDefaultParams]) -> FotmobStatsResponse: ...
     @overload
     async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesStreamParams]) -> BinaryIO: ...
     @overload
     async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesTextResponseParams]) -> str: ...
     @overload
-    async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesParams]) -> FotmobStatsCategoriesResponse: ...
+    async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesDefaultParams]) -> FotmobStatsCategoriesResponse: ...
     @overload
     async def table(self, **params: Unpack[FotmobTableStreamParams]) -> BinaryIO: ...
     @overload
     async def table(self, **params: Unpack[FotmobTableTextResponseParams]) -> str: ...
     @overload
-    async def table(self, **params: Unpack[FotmobTableParams]) -> FotmobTableResponse: ...
+    async def table(self, **params: Unpack[FotmobTableDefaultParams]) -> FotmobTableResponse: ...
     @overload
     async def team(self, **params: Unpack[FotmobTeamStreamParams]) -> BinaryIO: ...
     @overload
     async def team(self, **params: Unpack[FotmobTeamTextResponseParams]) -> str: ...
     @overload
-    async def team(self, **params: Unpack[FotmobTeamParams]) -> FotmobTeamResponse: ...
+    async def team(self, **params: Unpack[FotmobTeamDefaultParams]) -> FotmobTeamResponse: ...
     @overload
     async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesStreamParams]) -> BinaryIO: ...
     @overload
     async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesTextResponseParams]) -> str: ...
     @overload
-    async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesParams]) -> FotmobTeamFixturesResponse: ...
+    async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesDefaultParams]) -> FotmobTeamFixturesResponse: ...
     @overload
     async def team_news(self, **params: Unpack[FotmobTeamNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def team_news(self, **params: Unpack[FotmobTeamNewsTextResponseParams]) -> str: ...
     @overload
-    async def team_news(self, **params: Unpack[FotmobTeamNewsParams]) -> FotmobTeamNewsResponse: ...
+    async def team_news(self, **params: Unpack[FotmobTeamNewsDefaultParams]) -> FotmobTeamNewsResponse: ...
     @overload
     async def transfers(self, **params: Unpack[FotmobTransfersStreamParams]) -> BinaryIO: ...
     @overload
     async def transfers(self, **params: Unpack[FotmobTransfersTextResponseParams]) -> str: ...
     @overload
-    async def transfers(self, **params: Unpack[FotmobTransfersParams]) -> FotmobTransfersResponse: ...
+    async def transfers(self, **params: Unpack[FotmobTransfersDefaultParams]) -> FotmobTransfersResponse: ...
     @overload
     async def trending_news(self, **params: Unpack[FotmobTrendingNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def trending_news(self, **params: Unpack[FotmobTrendingNewsTextResponseParams]) -> str: ...
     @overload
-    async def trending_news(self, **params: Unpack[FotmobTrendingNewsParams]) -> FotmobTrendingNewsResponse: ...
+    async def trending_news(self, **params: Unpack[FotmobTrendingNewsDefaultParams]) -> FotmobTrendingNewsResponse: ...
     @overload
     async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesStreamParams]) -> BinaryIO: ...
     @overload
     async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesTextResponseParams]) -> str: ...
     @overload
-    async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesParams]) -> FotmobTrendingSearchesResponse: ...
+    async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesDefaultParams]) -> FotmobTrendingSearchesResponse: ...
     @overload
     async def tv_guide(self, **params: Unpack[FotmobTvGuideStreamParams]) -> BinaryIO: ...
     @overload
     async def tv_guide(self, **params: Unpack[FotmobTvGuideTextResponseParams]) -> str: ...
     @overload
-    async def tv_guide(self, **params: Unpack[FotmobTvGuideParams]) -> FotmobTvGuideResponse: ...
+    async def tv_guide(self, **params: Unpack[FotmobTvGuideDefaultParams]) -> FotmobTvGuideResponse: ...
     @overload
     async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsStreamParams]) -> BinaryIO: ...
     @overload
     async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsTextResponseParams]) -> str: ...
     @overload
-    async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsParams]) -> FotmobTvGuideChannelsResponse: ...
+    async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsDefaultParams]) -> FotmobTvGuideChannelsResponse: ...
     @overload
     async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesStreamParams]) -> BinaryIO: ...
     @overload
     async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesTextResponseParams]) -> str: ...
     @overload
-    async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesParams]) -> FotmobTvGuideCountriesResponse: ...
+    async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesDefaultParams]) -> FotmobTvGuideCountriesResponse: ...
 
 class _AsyncFotmobGroup:
     @overload
@@ -1712,412 +1866,532 @@ class _AsyncFotmobGroup:
     @overload
     async def audio_matches(self, **params: Unpack[FotmobAudioMatchesTextResponseParams]) -> str: ...
     @overload
-    async def audio_matches(self, **params: Unpack[FotmobAudioMatchesParams]) -> FotmobAudioMatchesResponse: ...
+    async def audio_matches(self, **params: Unpack[FotmobAudioMatchesDefaultParams]) -> FotmobAudioMatchesResponse: ...
     @overload
     async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsStreamParams]) -> BinaryIO: ...
     @overload
     async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsTextResponseParams]) -> str: ...
     @overload
-    async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsParams]) -> FotmobFifaRankingPeriodsResponse: ...
+    async def fifa_ranking_periods(self, **params: Unpack[FotmobFifaRankingPeriodsDefaultParams]) -> FotmobFifaRankingPeriodsResponse: ...
     @overload
     async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsStreamParams]) -> BinaryIO: ...
     @overload
     async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsTextResponseParams]) -> str: ...
     @overload
-    async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsParams]) -> FotmobFifaRankingsResponse: ...
+    async def fifa_rankings(self, **params: Unpack[FotmobFifaRankingsDefaultParams]) -> FotmobFifaRankingsResponse: ...
     @overload
     async def latest_news(self, **params: Unpack[FotmobLatestNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def latest_news(self, **params: Unpack[FotmobLatestNewsTextResponseParams]) -> str: ...
     @overload
-    async def latest_news(self, **params: Unpack[FotmobLatestNewsParams]) -> FotmobLatestNewsResponse: ...
+    async def latest_news(self, **params: Unpack[FotmobLatestNewsDefaultParams]) -> FotmobLatestNewsResponse: ...
     @overload
     async def league(self, **params: Unpack[FotmobLeagueStreamParams]) -> BinaryIO: ...
     @overload
     async def league(self, **params: Unpack[FotmobLeagueTextResponseParams]) -> str: ...
     @overload
-    async def league(self, **params: Unpack[FotmobLeagueParams]) -> FotmobLeagueResponse: ...
+    async def league(self, **params: Unpack[FotmobLeagueDefaultParams]) -> FotmobLeagueResponse: ...
     @overload
     async def leagues(self, **params: Unpack[FotmobLeaguesStreamParams]) -> BinaryIO: ...
     @overload
     async def leagues(self, **params: Unpack[FotmobLeaguesTextResponseParams]) -> str: ...
     @overload
-    async def leagues(self, **params: Unpack[FotmobLeaguesParams]) -> FotmobLeaguesResponse: ...
+    async def leagues(self, **params: Unpack[FotmobLeaguesDefaultParams]) -> FotmobLeaguesResponse: ...
     @overload
     async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersStreamParams]) -> BinaryIO: ...
     @overload
     async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersTextResponseParams]) -> str: ...
     @overload
-    async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersParams]) -> FotmobLineupBuilderPlayersResponse: ...
+    async def lineup_builder_players(self, **params: Unpack[FotmobLineupBuilderPlayersDefaultParams]) -> FotmobLineupBuilderPlayersResponse: ...
     @overload
     async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamStreamParams]) -> BinaryIO: ...
     @overload
     async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamTextResponseParams]) -> str: ...
     @overload
-    async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamParams]) -> FotmobLineupBuilderTeamResponse: ...
+    async def lineup_builder_team(self, **params: Unpack[FotmobLineupBuilderTeamDefaultParams]) -> FotmobLineupBuilderTeamResponse: ...
     @overload
     async def match(self, **params: Unpack[FotmobMatchStreamParams]) -> BinaryIO: ...
     @overload
     async def match(self, **params: Unpack[FotmobMatchTextResponseParams]) -> str: ...
     @overload
-    async def match(self, **params: Unpack[FotmobMatchParams]) -> FotmobMatchResponse: ...
+    async def match(self, **params: Unpack[FotmobMatchDefaultParams]) -> FotmobMatchResponse: ...
     @overload
     async def match_media(self, **params: Unpack[FotmobMatchMediaStreamParams]) -> BinaryIO: ...
     @overload
     async def match_media(self, **params: Unpack[FotmobMatchMediaTextResponseParams]) -> str: ...
     @overload
-    async def match_media(self, **params: Unpack[FotmobMatchMediaParams]) -> FotmobMatchMediaResponse: ...
+    async def match_media(self, **params: Unpack[FotmobMatchMediaDefaultParams]) -> FotmobMatchMediaResponse: ...
     @overload
     async def matches(self, **params: Unpack[FotmobMatchesStreamParams]) -> BinaryIO: ...
     @overload
     async def matches(self, **params: Unpack[FotmobMatchesTextResponseParams]) -> str: ...
     @overload
-    async def matches(self, **params: Unpack[FotmobMatchesParams]) -> FotmobMatchesResponse: ...
+    async def matches(self, **params: Unpack[FotmobMatchesDefaultParams]) -> FotmobMatchesResponse: ...
     @overload
     async def news(self, **params: Unpack[FotmobNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def news(self, **params: Unpack[FotmobNewsTextResponseParams]) -> str: ...
     @overload
-    async def news(self, **params: Unpack[FotmobNewsParams]) -> FotmobNewsResponse: ...
+    async def news(self, **params: Unpack[FotmobNewsDefaultParams]) -> FotmobNewsResponse: ...
     @overload
     async def news_article(self, **params: Unpack[FotmobNewsArticleStreamParams]) -> BinaryIO: ...
     @overload
     async def news_article(self, **params: Unpack[FotmobNewsArticleTextResponseParams]) -> str: ...
     @overload
-    async def news_article(self, **params: Unpack[FotmobNewsArticleParams]) -> FotmobNewsArticleResponse: ...
+    async def news_article(self, **params: Unpack[FotmobNewsArticleDefaultParams]) -> FotmobNewsArticleResponse: ...
     @overload
     async def player(self, **params: Unpack[FotmobPlayerStreamParams]) -> BinaryIO: ...
     @overload
     async def player(self, **params: Unpack[FotmobPlayerTextResponseParams]) -> str: ...
     @overload
-    async def player(self, **params: Unpack[FotmobPlayerParams]) -> FotmobPlayerResponse: ...
+    async def player(self, **params: Unpack[FotmobPlayerDefaultParams]) -> FotmobPlayerResponse: ...
     @overload
     async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsStreamParams]) -> BinaryIO: ...
     @overload
     async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsTextResponseParams]) -> str: ...
     @overload
-    async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsParams]) -> FotmobPlayerMatchStatsResponse: ...
+    async def player_match_stats(self, **params: Unpack[FotmobPlayerMatchStatsDefaultParams]) -> FotmobPlayerMatchStatsResponse: ...
     @overload
     async def player_matches(self, **params: Unpack[FotmobPlayerMatchesStreamParams]) -> BinaryIO: ...
     @overload
     async def player_matches(self, **params: Unpack[FotmobPlayerMatchesTextResponseParams]) -> str: ...
     @overload
-    async def player_matches(self, **params: Unpack[FotmobPlayerMatchesParams]) -> FotmobPlayerMatchesResponse: ...
+    async def player_matches(self, **params: Unpack[FotmobPlayerMatchesDefaultParams]) -> FotmobPlayerMatchesResponse: ...
     @overload
     async def player_stats(self, **params: Unpack[FotmobPlayerStatsStreamParams]) -> BinaryIO: ...
     @overload
     async def player_stats(self, **params: Unpack[FotmobPlayerStatsTextResponseParams]) -> str: ...
     @overload
-    async def player_stats(self, **params: Unpack[FotmobPlayerStatsParams]) -> FotmobPlayerStatsResponse: ...
+    async def player_stats(self, **params: Unpack[FotmobPlayerStatsDefaultParams]) -> FotmobPlayerStatsResponse: ...
     @overload
     async def search(self, **params: Unpack[FotmobSearchStreamParams]) -> BinaryIO: ...
     @overload
     async def search(self, **params: Unpack[FotmobSearchTextResponseParams]) -> str: ...
     @overload
-    async def search(self, **params: Unpack[FotmobSearchParams]) -> FotmobSearchResponse: ...
+    async def search(self, **params: Unpack[FotmobSearchDefaultParams]) -> FotmobSearchResponse: ...
     @overload
     async def seasons(self, **params: Unpack[FotmobSeasonsStreamParams]) -> BinaryIO: ...
     @overload
     async def seasons(self, **params: Unpack[FotmobSeasonsTextResponseParams]) -> str: ...
     @overload
-    async def seasons(self, **params: Unpack[FotmobSeasonsParams]) -> FotmobSeasonsResponse: ...
+    async def seasons(self, **params: Unpack[FotmobSeasonsDefaultParams]) -> FotmobSeasonsResponse: ...
     @overload
     async def stats(self, **params: Unpack[FotmobStatsStreamParams]) -> BinaryIO: ...
     @overload
     async def stats(self, **params: Unpack[FotmobStatsTextResponseParams]) -> str: ...
     @overload
-    async def stats(self, **params: Unpack[FotmobStatsParams]) -> FotmobStatsResponse: ...
+    async def stats(self, **params: Unpack[FotmobStatsDefaultParams]) -> FotmobStatsResponse: ...
     @overload
     async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesStreamParams]) -> BinaryIO: ...
     @overload
     async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesTextResponseParams]) -> str: ...
     @overload
-    async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesParams]) -> FotmobStatsCategoriesResponse: ...
+    async def stats_categories(self, **params: Unpack[FotmobStatsCategoriesDefaultParams]) -> FotmobStatsCategoriesResponse: ...
     @overload
     async def table(self, **params: Unpack[FotmobTableStreamParams]) -> BinaryIO: ...
     @overload
     async def table(self, **params: Unpack[FotmobTableTextResponseParams]) -> str: ...
     @overload
-    async def table(self, **params: Unpack[FotmobTableParams]) -> FotmobTableResponse: ...
+    async def table(self, **params: Unpack[FotmobTableDefaultParams]) -> FotmobTableResponse: ...
     @overload
     async def team(self, **params: Unpack[FotmobTeamStreamParams]) -> BinaryIO: ...
     @overload
     async def team(self, **params: Unpack[FotmobTeamTextResponseParams]) -> str: ...
     @overload
-    async def team(self, **params: Unpack[FotmobTeamParams]) -> FotmobTeamResponse: ...
+    async def team(self, **params: Unpack[FotmobTeamDefaultParams]) -> FotmobTeamResponse: ...
     @overload
     async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesStreamParams]) -> BinaryIO: ...
     @overload
     async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesTextResponseParams]) -> str: ...
     @overload
-    async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesParams]) -> FotmobTeamFixturesResponse: ...
+    async def team_fixtures(self, **params: Unpack[FotmobTeamFixturesDefaultParams]) -> FotmobTeamFixturesResponse: ...
     @overload
     async def team_news(self, **params: Unpack[FotmobTeamNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def team_news(self, **params: Unpack[FotmobTeamNewsTextResponseParams]) -> str: ...
     @overload
-    async def team_news(self, **params: Unpack[FotmobTeamNewsParams]) -> FotmobTeamNewsResponse: ...
+    async def team_news(self, **params: Unpack[FotmobTeamNewsDefaultParams]) -> FotmobTeamNewsResponse: ...
     @overload
     async def transfers(self, **params: Unpack[FotmobTransfersStreamParams]) -> BinaryIO: ...
     @overload
     async def transfers(self, **params: Unpack[FotmobTransfersTextResponseParams]) -> str: ...
     @overload
-    async def transfers(self, **params: Unpack[FotmobTransfersParams]) -> FotmobTransfersResponse: ...
+    async def transfers(self, **params: Unpack[FotmobTransfersDefaultParams]) -> FotmobTransfersResponse: ...
     @overload
     async def trending_news(self, **params: Unpack[FotmobTrendingNewsStreamParams]) -> BinaryIO: ...
     @overload
     async def trending_news(self, **params: Unpack[FotmobTrendingNewsTextResponseParams]) -> str: ...
     @overload
-    async def trending_news(self, **params: Unpack[FotmobTrendingNewsParams]) -> FotmobTrendingNewsResponse: ...
+    async def trending_news(self, **params: Unpack[FotmobTrendingNewsDefaultParams]) -> FotmobTrendingNewsResponse: ...
     @overload
     async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesStreamParams]) -> BinaryIO: ...
     @overload
     async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesTextResponseParams]) -> str: ...
     @overload
-    async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesParams]) -> FotmobTrendingSearchesResponse: ...
+    async def trending_searches(self, **params: Unpack[FotmobTrendingSearchesDefaultParams]) -> FotmobTrendingSearchesResponse: ...
     @overload
     async def tv_guide(self, **params: Unpack[FotmobTvGuideStreamParams]) -> BinaryIO: ...
     @overload
     async def tv_guide(self, **params: Unpack[FotmobTvGuideTextResponseParams]) -> str: ...
     @overload
-    async def tv_guide(self, **params: Unpack[FotmobTvGuideParams]) -> FotmobTvGuideResponse: ...
+    async def tv_guide(self, **params: Unpack[FotmobTvGuideDefaultParams]) -> FotmobTvGuideResponse: ...
     @overload
     async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsStreamParams]) -> BinaryIO: ...
     @overload
     async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsTextResponseParams]) -> str: ...
     @overload
-    async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsParams]) -> FotmobTvGuideChannelsResponse: ...
+    async def tv_guide_channels(self, **params: Unpack[FotmobTvGuideChannelsDefaultParams]) -> FotmobTvGuideChannelsResponse: ...
     @overload
     async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesStreamParams]) -> BinaryIO: ...
     @overload
     async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesTextResponseParams]) -> str: ...
     @overload
-    async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesParams]) -> FotmobTvGuideCountriesResponse: ...
+    async def tv_guide_countries(self, **params: Unpack[FotmobTvGuideCountriesDefaultParams]) -> FotmobTvGuideCountriesResponse: ...
 
-FotmobAudioMatchesTextResponseParams = TypedDict('FotmobAudioMatchesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobAudioMatchesDefaultParams = TypedDict('FotmobAudioMatchesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+}, total=False)
+
+FotmobAudioMatchesTextResponseParams = TypedDict('FotmobAudioMatchesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
 }, total=False)
 
 FotmobAudioMatchesStreamParams = TypedDict('FotmobAudioMatchesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
+}, total=False)
+
+FotmobFifaRankingPeriodsDefaultParams = TypedDict('FotmobFifaRankingPeriodsDefaultParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'gender': Required[Literal['men', 'women']],
 }, total=False)
 
 FotmobFifaRankingPeriodsTextResponseParams = TypedDict('FotmobFifaRankingPeriodsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'gender': Required[Literal['men', 'women']],
 }, total=False)
 
 FotmobFifaRankingPeriodsStreamParams = TypedDict('FotmobFifaRankingPeriodsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'gender': Required[Literal['men', 'women']],
 }, total=False)
 
-FotmobFifaRankingsTextResponseParams = TypedDict('FotmobFifaRankingsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobFifaRankingsDefaultParams = TypedDict('FotmobFifaRankingsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'gender': Required[Literal['men', 'women']],
+    'period_id': Required[str],
+}, total=False)
+
+FotmobFifaRankingsTextResponseParams = TypedDict('FotmobFifaRankingsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'gender': Required[Literal['men', 'women']],
     'period_id': Required[str],
 }, total=False)
 
 FotmobFifaRankingsStreamParams = TypedDict('FotmobFifaRankingsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'gender': Required[Literal['men', 'women']],
     'period_id': Required[str],
 }, total=False)
 
-FotmobLatestNewsTextResponseParams = TypedDict('FotmobLatestNewsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobLatestNewsDefaultParams = TypedDict('FotmobLatestNewsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'start_index': NotRequired[int],
+}, total=False)
+
+FotmobLatestNewsTextResponseParams = TypedDict('FotmobLatestNewsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'start_index': NotRequired[int],
 }, total=False)
 
 FotmobLatestNewsStreamParams = TypedDict('FotmobLatestNewsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'start_index': NotRequired[int],
 }, total=False)
 
-FotmobLeagueTextResponseParams = TypedDict('FotmobLeagueTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobLeagueDefaultParams = TypedDict('FotmobLeagueDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'league_id': Required[int],
+    'season': NotRequired[str],
+    'shotmap': NotRequired[bool],
+}, total=False)
+
+FotmobLeagueTextResponseParams = TypedDict('FotmobLeagueTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'league_id': Required[int],
     'season': NotRequired[str],
     'shotmap': NotRequired[bool],
 }, total=False)
 
 FotmobLeagueStreamParams = TypedDict('FotmobLeagueStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'league_id': Required[int],
     'season': NotRequired[str],
     'shotmap': NotRequired[bool],
 }, total=False)
 
-FotmobLeaguesTextResponseParams = TypedDict('FotmobLeaguesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobLeaguesDefaultParams = TypedDict('FotmobLeaguesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+}, total=False)
+
+FotmobLeaguesTextResponseParams = TypedDict('FotmobLeaguesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
 }, total=False)
 
 FotmobLeaguesStreamParams = TypedDict('FotmobLeaguesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
+}, total=False)
+
+FotmobLineupBuilderPlayersDefaultParams = TypedDict('FotmobLineupBuilderPlayersDefaultParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'player_ids': Required[str],
 }, total=False)
 
 FotmobLineupBuilderPlayersTextResponseParams = TypedDict('FotmobLineupBuilderPlayersTextResponseParams', {
-    '_response_type': Required[Literal['text']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'player_ids': Required[str],
 }, total=False)
 
 FotmobLineupBuilderPlayersStreamParams = TypedDict('FotmobLineupBuilderPlayersStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'player_ids': Required[str],
 }, total=False)
 
-FotmobLineupBuilderTeamTextResponseParams = TypedDict('FotmobLineupBuilderTeamTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobLineupBuilderTeamDefaultParams = TypedDict('FotmobLineupBuilderTeamDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'team_id': Required[str],
+}, total=False)
+
+FotmobLineupBuilderTeamTextResponseParams = TypedDict('FotmobLineupBuilderTeamTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'team_id': Required[str],
 }, total=False)
 
 FotmobLineupBuilderTeamStreamParams = TypedDict('FotmobLineupBuilderTeamStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'team_id': Required[str],
 }, total=False)
 
-FotmobMatchTextResponseParams = TypedDict('FotmobMatchTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobMatchDefaultParams = TypedDict('FotmobMatchDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'id': Required[str],
+}, total=False)
+
+FotmobMatchTextResponseParams = TypedDict('FotmobMatchTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'id': Required[str],
 }, total=False)
 
 FotmobMatchStreamParams = TypedDict('FotmobMatchStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
+    'id': Required[str],
+}, total=False)
+
+FotmobMatchMediaDefaultParams = TypedDict('FotmobMatchMediaDefaultParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
     'id': Required[str],
 }, total=False)
 
 FotmobMatchMediaTextResponseParams = TypedDict('FotmobMatchMediaTextResponseParams', {
-    '_response_type': Required[Literal['text']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'id': Required[str],
 }, total=False)
 
 FotmobMatchMediaStreamParams = TypedDict('FotmobMatchMediaStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'id': Required[str],
 }, total=False)
 
-FotmobMatchesTextResponseParams = TypedDict('FotmobMatchesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobMatchesDefaultParams = TypedDict('FotmobMatchesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'date': Required[str],
+    'timezone': NotRequired[str],
+}, total=False)
+
+FotmobMatchesTextResponseParams = TypedDict('FotmobMatchesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'date': Required[str],
     'timezone': NotRequired[str],
 }, total=False)
 
 FotmobMatchesStreamParams = TypedDict('FotmobMatchesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'date': Required[str],
     'timezone': NotRequired[str],
 }, total=False)
 
-FotmobNewsTextResponseParams = TypedDict('FotmobNewsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobNewsDefaultParams = TypedDict('FotmobNewsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'league_id': Required[str],
+    'start_index': NotRequired[int],
+}, total=False)
+
+FotmobNewsTextResponseParams = TypedDict('FotmobNewsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'league_id': Required[str],
     'start_index': NotRequired[int],
 }, total=False)
 
 FotmobNewsStreamParams = TypedDict('FotmobNewsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'league_id': Required[str],
     'start_index': NotRequired[int],
 }, total=False)
 
-FotmobNewsArticleTextResponseParams = TypedDict('FotmobNewsArticleTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobNewsArticleDefaultParams = TypedDict('FotmobNewsArticleDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'id': Required[str],
+}, total=False)
+
+FotmobNewsArticleTextResponseParams = TypedDict('FotmobNewsArticleTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'id': Required[str],
 }, total=False)
 
 FotmobNewsArticleStreamParams = TypedDict('FotmobNewsArticleStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'id': Required[str],
 }, total=False)
 
-FotmobPlayerTextResponseParams = TypedDict('FotmobPlayerTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobPlayerDefaultParams = TypedDict('FotmobPlayerDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'id': Required[str],
+    'include_market_values': NotRequired[bool],
+}, total=False)
+
+FotmobPlayerTextResponseParams = TypedDict('FotmobPlayerTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'id': Required[str],
     'include_market_values': NotRequired[bool],
 }, total=False)
 
 FotmobPlayerStreamParams = TypedDict('FotmobPlayerStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'id': Required[str],
     'include_market_values': NotRequired[bool],
 }, total=False)
 
-FotmobPlayerMatchStatsTextResponseParams = TypedDict('FotmobPlayerMatchStatsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobPlayerMatchStatsDefaultParams = TypedDict('FotmobPlayerMatchStatsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'player_id': Required[str],
+    'match_id': Required[str],
+}, total=False)
+
+FotmobPlayerMatchStatsTextResponseParams = TypedDict('FotmobPlayerMatchStatsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'player_id': Required[str],
     'match_id': Required[str],
 }, total=False)
 
 FotmobPlayerMatchStatsStreamParams = TypedDict('FotmobPlayerMatchStatsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'player_id': Required[str],
     'match_id': Required[str],
 }, total=False)
 
-FotmobPlayerMatchesTextResponseParams = TypedDict('FotmobPlayerMatchesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobPlayerMatchesDefaultParams = TypedDict('FotmobPlayerMatchesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'player_id': Required[str],
+    'league_id': NotRequired[str],
+    'team_id': NotRequired[str],
+    'before': NotRequired[str],
+}, total=False)
+
+FotmobPlayerMatchesTextResponseParams = TypedDict('FotmobPlayerMatchesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'player_id': Required[str],
     'league_id': NotRequired[str],
     'team_id': NotRequired[str],
@@ -2125,63 +2399,97 @@ FotmobPlayerMatchesTextResponseParams = TypedDict('FotmobPlayerMatchesTextRespon
 }, total=False)
 
 FotmobPlayerMatchesStreamParams = TypedDict('FotmobPlayerMatchesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'player_id': Required[str],
     'league_id': NotRequired[str],
     'team_id': NotRequired[str],
     'before': NotRequired[str],
 }, total=False)
 
-FotmobPlayerStatsTextResponseParams = TypedDict('FotmobPlayerStatsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobPlayerStatsDefaultParams = TypedDict('FotmobPlayerStatsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'player_id': Required[str],
+    'season_id': Required[str],
+}, total=False)
+
+FotmobPlayerStatsTextResponseParams = TypedDict('FotmobPlayerStatsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'player_id': Required[str],
     'season_id': Required[str],
 }, total=False)
 
 FotmobPlayerStatsStreamParams = TypedDict('FotmobPlayerStatsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'player_id': Required[str],
     'season_id': Required[str],
 }, total=False)
 
-FotmobSearchTextResponseParams = TypedDict('FotmobSearchTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobSearchDefaultParams = TypedDict('FotmobSearchDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'term': Required[str],
+}, total=False)
+
+FotmobSearchTextResponseParams = TypedDict('FotmobSearchTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'term': Required[str],
 }, total=False)
 
 FotmobSearchStreamParams = TypedDict('FotmobSearchStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'term': Required[str],
 }, total=False)
 
-FotmobSeasonsTextResponseParams = TypedDict('FotmobSeasonsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobSeasonsDefaultParams = TypedDict('FotmobSeasonsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'league_id': Required[int],
+}, total=False)
+
+FotmobSeasonsTextResponseParams = TypedDict('FotmobSeasonsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'league_id': Required[int],
 }, total=False)
 
 FotmobSeasonsStreamParams = TypedDict('FotmobSeasonsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'league_id': Required[int],
 }, total=False)
 
-FotmobStatsTextResponseParams = TypedDict('FotmobStatsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobStatsDefaultParams = TypedDict('FotmobStatsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'league_id': Required[str],
+    'season_id': NotRequired[str],
+    'type': Required[Literal['players', 'teams']],
+    'stat': Required[str],
+    'team_id': NotRequired[str],
+    'position': NotRequired[Literal['all', 'striker', 'winger', 'attackingMidfielder', 'midfielder', 'fullback', 'centerBack']],
+}, total=False)
+
+FotmobStatsTextResponseParams = TypedDict('FotmobStatsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'league_id': Required[str],
     'season_id': NotRequired[str],
     'type': Required[Literal['players', 'teams']],
@@ -2191,9 +2499,9 @@ FotmobStatsTextResponseParams = TypedDict('FotmobStatsTextResponseParams', {
 }, total=False)
 
 FotmobStatsStreamParams = TypedDict('FotmobStatsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'league_id': Required[str],
     'season_id': NotRequired[str],
     'type': Required[Literal['players', 'teams']],
@@ -2202,88 +2510,144 @@ FotmobStatsStreamParams = TypedDict('FotmobStatsStreamParams', {
     'position': NotRequired[Literal['all', 'striker', 'winger', 'attackingMidfielder', 'midfielder', 'fullback', 'centerBack']],
 }, total=False)
 
-FotmobStatsCategoriesTextResponseParams = TypedDict('FotmobStatsCategoriesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobStatsCategoriesDefaultParams = TypedDict('FotmobStatsCategoriesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'league_id': Required[str],
+    'season_id': NotRequired[str],
+    'type': Required[Literal['players', 'teams']],
+}, total=False)
+
+FotmobStatsCategoriesTextResponseParams = TypedDict('FotmobStatsCategoriesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'league_id': Required[str],
     'season_id': NotRequired[str],
     'type': Required[Literal['players', 'teams']],
 }, total=False)
 
 FotmobStatsCategoriesStreamParams = TypedDict('FotmobStatsCategoriesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'league_id': Required[str],
     'season_id': NotRequired[str],
     'type': Required[Literal['players', 'teams']],
 }, total=False)
 
-FotmobTableTextResponseParams = TypedDict('FotmobTableTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTableDefaultParams = TypedDict('FotmobTableDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'league_id': Required[str],
+}, total=False)
+
+FotmobTableTextResponseParams = TypedDict('FotmobTableTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'league_id': Required[str],
 }, total=False)
 
 FotmobTableStreamParams = TypedDict('FotmobTableStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'league_id': Required[str],
 }, total=False)
 
-FotmobTeamTextResponseParams = TypedDict('FotmobTeamTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTeamDefaultParams = TypedDict('FotmobTeamDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'id': Required[str],
+}, total=False)
+
+FotmobTeamTextResponseParams = TypedDict('FotmobTeamTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'id': Required[str],
 }, total=False)
 
 FotmobTeamStreamParams = TypedDict('FotmobTeamStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'id': Required[str],
 }, total=False)
 
-FotmobTeamFixturesTextResponseParams = TypedDict('FotmobTeamFixturesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTeamFixturesDefaultParams = TypedDict('FotmobTeamFixturesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'team_id': Required[str],
+    'cursor': Required[str],
+}, total=False)
+
+FotmobTeamFixturesTextResponseParams = TypedDict('FotmobTeamFixturesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'team_id': Required[str],
     'cursor': Required[str],
 }, total=False)
 
 FotmobTeamFixturesStreamParams = TypedDict('FotmobTeamFixturesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'team_id': Required[str],
     'cursor': Required[str],
 }, total=False)
 
-FotmobTeamNewsTextResponseParams = TypedDict('FotmobTeamNewsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTeamNewsDefaultParams = TypedDict('FotmobTeamNewsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'team_id': Required[int],
+    'start_index': NotRequired[int],
+}, total=False)
+
+FotmobTeamNewsTextResponseParams = TypedDict('FotmobTeamNewsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'team_id': Required[int],
     'start_index': NotRequired[int],
 }, total=False)
 
 FotmobTeamNewsStreamParams = TypedDict('FotmobTeamNewsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'team_id': Required[int],
     'start_index': NotRequired[int],
 }, total=False)
 
-FotmobTransfersTextResponseParams = TypedDict('FotmobTransfersTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTransfersDefaultParams = TypedDict('FotmobTransfersDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'mode': NotRequired[Literal['all', 'rumours', 'popular']],
+    'page': NotRequired[int],
+    'last': NotRequired[Literal['6months', '1year', '2years', '3years']],
+    'direction': NotRequired[Literal['all', 'in', 'out']],
+    'min_fee': NotRequired[int],
+    'max_fee': NotRequired[int],
+    'league_ids': NotRequired[str],
+    'team_ids': NotRequired[str],
+    'order_by': NotRequired[Literal['lastModified', 'fee', 'date', 'name', 'fromClubName', 'toClubName']],
+    'exclude_extensions': NotRequired[bool],
+    'likely_only': NotRequired[bool],
+}, total=False)
+
+FotmobTransfersTextResponseParams = TypedDict('FotmobTransfersTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'mode': NotRequired[Literal['all', 'rumours', 'popular']],
     'page': NotRequired[int],
     'last': NotRequired[Literal['6months', '1year', '2years', '3years']],
@@ -2298,9 +2662,9 @@ FotmobTransfersTextResponseParams = TypedDict('FotmobTransfersTextResponseParams
 }, total=False)
 
 FotmobTransfersStreamParams = TypedDict('FotmobTransfersStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'mode': NotRequired[Literal['all', 'rumours', 'popular']],
     'page': NotRequired[int],
     'last': NotRequired[Literal['6months', '1year', '2years', '3years']],
@@ -2314,68 +2678,101 @@ FotmobTransfersStreamParams = TypedDict('FotmobTransfersStreamParams', {
     'likely_only': NotRequired[bool],
 }, total=False)
 
-FotmobTrendingNewsTextResponseParams = TypedDict('FotmobTrendingNewsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTrendingNewsDefaultParams = TypedDict('FotmobTrendingNewsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+}, total=False)
+
+FotmobTrendingNewsTextResponseParams = TypedDict('FotmobTrendingNewsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
 }, total=False)
 
 FotmobTrendingNewsStreamParams = TypedDict('FotmobTrendingNewsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
+}, total=False)
+
+FotmobTrendingSearchesDefaultParams = TypedDict('FotmobTrendingSearchesDefaultParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
 }, total=False)
 
 FotmobTrendingSearchesTextResponseParams = TypedDict('FotmobTrendingSearchesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
 }, total=False)
 
 FotmobTrendingSearchesStreamParams = TypedDict('FotmobTrendingSearchesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
+}, total=False)
+
+FotmobTvGuideDefaultParams = TypedDict('FotmobTvGuideDefaultParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'country': Required[Literal['us', 'se', 'gb', 'de', 'no', 'es', 'mx', 'ar', 'bo', 'cl', 'co', 'cr', 'ec', 'gt', 'hn', 'ni', 'pa', 'py', 'pe', 'uy', 've', 'da', 'ca', 'au', 'at', 'be', 'bg', 'hr', 'cy', 'cz', 'ee', 'fi', 'fr', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'nl', 'pl', 'pt', 'ro', 'ru', 'ch', 'tr', 'za', 'br', 'in', 'me', 'id', 'th', 'mm', 'al', 'az', 'bl', 'ba', 'ks', 'la', 'li', 'mk', 'rs', 'sk', 'ua', 'essv', 'nz', 'bd', 'cn', 'gh', 'hk', 'jp', 'kr', 'ma', 'mt', 'my', 'ng', 'ph', 'pk', 'sg', 'si', 'tz']],
+    'timezone': NotRequired[str],
 }, total=False)
 
 FotmobTvGuideTextResponseParams = TypedDict('FotmobTvGuideTextResponseParams', {
-    '_response_type': Required[Literal['text']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'country': Required[Literal['us', 'se', 'gb', 'de', 'no', 'es', 'mx', 'ar', 'bo', 'cl', 'co', 'cr', 'ec', 'gt', 'hn', 'ni', 'pa', 'py', 'pe', 'uy', 've', 'da', 'ca', 'au', 'at', 'be', 'bg', 'hr', 'cy', 'cz', 'ee', 'fi', 'fr', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'nl', 'pl', 'pt', 'ro', 'ru', 'ch', 'tr', 'za', 'br', 'in', 'me', 'id', 'th', 'mm', 'al', 'az', 'bl', 'ba', 'ks', 'la', 'li', 'mk', 'rs', 'sk', 'ua', 'essv', 'nz', 'bd', 'cn', 'gh', 'hk', 'jp', 'kr', 'ma', 'mt', 'my', 'ng', 'ph', 'pk', 'sg', 'si', 'tz']],
     'timezone': NotRequired[str],
 }, total=False)
 
 FotmobTvGuideStreamParams = TypedDict('FotmobTvGuideStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'country': Required[Literal['us', 'se', 'gb', 'de', 'no', 'es', 'mx', 'ar', 'bo', 'cl', 'co', 'cr', 'ec', 'gt', 'hn', 'ni', 'pa', 'py', 'pe', 'uy', 've', 'da', 'ca', 'au', 'at', 'be', 'bg', 'hr', 'cy', 'cz', 'ee', 'fi', 'fr', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'nl', 'pl', 'pt', 'ro', 'ru', 'ch', 'tr', 'za', 'br', 'in', 'me', 'id', 'th', 'mm', 'al', 'az', 'bl', 'ba', 'ks', 'la', 'li', 'mk', 'rs', 'sk', 'ua', 'essv', 'nz', 'bd', 'cn', 'gh', 'hk', 'jp', 'kr', 'ma', 'mt', 'my', 'ng', 'ph', 'pk', 'sg', 'si', 'tz']],
     'timezone': NotRequired[str],
 }, total=False)
 
-FotmobTvGuideChannelsTextResponseParams = TypedDict('FotmobTvGuideChannelsTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTvGuideChannelsDefaultParams = TypedDict('FotmobTvGuideChannelsDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+    'country': Required[Literal['us', 'se', 'gb', 'de', 'no', 'es', 'mx', 'ar', 'bo', 'cl', 'co', 'cr', 'ec', 'gt', 'hn', 'ni', 'pa', 'py', 'pe', 'uy', 've', 'da', 'ca', 'au', 'at', 'be', 'bg', 'hr', 'cy', 'cz', 'ee', 'fi', 'fr', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'nl', 'pl', 'pt', 'ro', 'ru', 'ch', 'tr', 'za', 'br', 'in', 'me', 'id', 'th', 'mm', 'al', 'az', 'bl', 'ba', 'ks', 'la', 'li', 'mk', 'rs', 'sk', 'ua', 'essv', 'nz', 'bd', 'cn', 'gh', 'hk', 'jp', 'kr', 'ma', 'mt', 'my', 'ng', 'ph', 'pk', 'sg', 'si', 'tz']],
+}, total=False)
+
+FotmobTvGuideChannelsTextResponseParams = TypedDict('FotmobTvGuideChannelsTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
     'country': Required[Literal['us', 'se', 'gb', 'de', 'no', 'es', 'mx', 'ar', 'bo', 'cl', 'co', 'cr', 'ec', 'gt', 'hn', 'ni', 'pa', 'py', 'pe', 'uy', 've', 'da', 'ca', 'au', 'at', 'be', 'bg', 'hr', 'cy', 'cz', 'ee', 'fi', 'fr', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'nl', 'pl', 'pt', 'ro', 'ru', 'ch', 'tr', 'za', 'br', 'in', 'me', 'id', 'th', 'mm', 'al', 'az', 'bl', 'ba', 'ks', 'la', 'li', 'mk', 'rs', 'sk', 'ua', 'essv', 'nz', 'bd', 'cn', 'gh', 'hk', 'jp', 'kr', 'ma', 'mt', 'my', 'ng', 'ph', 'pk', 'sg', 'si', 'tz']],
 }, total=False)
 
 FotmobTvGuideChannelsStreamParams = TypedDict('FotmobTvGuideChannelsStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
     'country': Required[Literal['us', 'se', 'gb', 'de', 'no', 'es', 'mx', 'ar', 'bo', 'cl', 'co', 'cr', 'ec', 'gt', 'hn', 'ni', 'pa', 'py', 'pe', 'uy', 've', 'da', 'ca', 'au', 'at', 'be', 'bg', 'hr', 'cy', 'cz', 'ee', 'fi', 'fr', 'gr', 'hu', 'is', 'ie', 'il', 'it', 'nl', 'pl', 'pt', 'ro', 'ru', 'ch', 'tr', 'za', 'br', 'in', 'me', 'id', 'th', 'mm', 'al', 'az', 'bl', 'ba', 'ks', 'la', 'li', 'mk', 'rs', 'sk', 'ua', 'essv', 'nz', 'bd', 'cn', 'gh', 'hk', 'jp', 'kr', 'ma', 'mt', 'my', 'ng', 'ph', 'pk', 'sg', 'si', 'tz']],
 }, total=False)
 
-FotmobTvGuideCountriesTextResponseParams = TypedDict('FotmobTvGuideCountriesTextResponseParams', {
-    '_response_type': Required[Literal['text']],
+FotmobTvGuideCountriesDefaultParams = TypedDict('FotmobTvGuideCountriesDefaultParams', {
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': NotRequired[Literal["auto", "json"]],
+}, total=False)
+
+FotmobTvGuideCountriesTextResponseParams = TypedDict('FotmobTvGuideCountriesTextResponseParams', {
+    '_timeout': NotRequired[float],
+    '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["text"]],
 }, total=False)
 
 FotmobTvGuideCountriesStreamParams = TypedDict('FotmobTvGuideCountriesStreamParams', {
-    '_response_type': Required[Literal['stream']],
     '_timeout': NotRequired[float],
     '_headers': NotRequired[Mapping[str, str]],
+    '_response_type': Required[Literal["stream"]],
 }, total=False)

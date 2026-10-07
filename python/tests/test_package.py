@@ -6,11 +6,11 @@ import crawlora_fotmob as client_package
 from crawlora_fotmob.client import _Response
 
 
-TEST_OPERATION_ID = 'fotmob-tv-guide-channels'
-TEST_METHOD_NAME = 'tv_guide_channels'
+TEST_OPERATION_ID = 'fotmob-tv-guide'
+TEST_METHOD_NAME = 'tv_guide'
 TEST_GROUP_NAME = 'fotmob'
-TEST_PARAMS = {'country': 'us'}
-TEST_URL = 'https://api.example.test/fotmob/tv-guide-channels?country=us'
+TEST_PARAMS = {'country': 'us', 'timezone': 'test value'}
+TEST_URL = 'https://api.example.test/fotmob/tv-guide?country=us&timezone=test+value'
 TEST_HAS_API_KEY = True
 
 
