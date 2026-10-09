@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted FotMob API. It calls Crawlora's h
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-fotmob</artifactId>
-  <version>0.1.7</version>
+  <version>0.1.8</version>
 </dependency>
 ```
 
