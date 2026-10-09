@@ -89,5 +89,5 @@
   "maven_artifact_id": "crawlora-fotmob",
   "java_description": "Java client for Crawlora's hosted FotMob API, with methods for leagues, matches, fixtures, teams, players, search, standings, news, and rankings. Requires a Crawlora API key.",
   "general_sdk_version": "1.46.0-sdk.1",
-  "php_repository": "https://github.com/Crawlora-org/crawlora-fotmob-php"
+  "php_repository": "https://github.com/Crawlora-org/crawlora-fotmob"
 }
