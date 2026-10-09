@@ -11,6 +11,13 @@
   "releases": [
     {
       "changes": [
+        "Enrich the Maven Central description with platform-specific Java client capabilities and API-key requirements."
+      ],
+      "date": "2026-10-09",
+      "version": "0.1.6"
+    },
+    {
+      "changes": [
         "Add registry-specific UTM-tagged Crawlora homepage and API documentation links to package metadata."
       ],
       "date": "2026-10-09",
@@ -58,12 +65,13 @@
   ],
   "repository": "https://github.com/Crawlora-org/crawlora-fotmob",
   "source_contract_sha256": "f8ff81231fc46cd7d6ef5f5bb99707dfa301c595ce731a533a67b49d055aa44b",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "golang_module_name": "github.com/Crawlora-org/crawlora-fotmob",
-  "golang_version": "0.1.5",
+  "golang_version": "0.1.6",
   "ruby_gem_name": "crawlora-fotmob",
   "php_package_name": "crawlora/fotmob",
   "maven_group_id": "net.crawlora",
   "maven_artifact_id": "crawlora-fotmob",
+  "java_description": "Java client for Crawlora's hosted FotMob API, with methods for leagues, matches, fixtures, teams, players, search, standings, news, and rankings. Requires a Crawlora API key.",
   "general_sdk_version": "1.46.0-sdk.1"
 }

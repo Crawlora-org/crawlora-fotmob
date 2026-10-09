@@ -7,7 +7,7 @@ from .async_client import AsyncCrawloraClient
 class FotMobClient(CrawloraClient):
     """Synchronous FotMob API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-fotmob-python/0.1.5')
+        kwargs.setdefault('user_agent', 'crawlora-fotmob-python/0.1.6')
         super().__init__(*args, **kwargs)
 
     def audio_matches(self, **params: Any) -> Any:
@@ -199,7 +199,7 @@ class FotMobClient(CrawloraClient):
 class AsyncFotMobClient(AsyncCrawloraClient):
     """Asynchronous FotMob API client."""
     def __init__(self, *args: Any, **kwargs: Any) -> None:
-        kwargs.setdefault('user_agent', 'crawlora-fotmob-python/0.1.5')
+        kwargs.setdefault('user_agent', 'crawlora-fotmob-python/0.1.6')
         super().__init__(*args, **kwargs)
 
     async def audio_matches(self, **params: Any) -> Any:

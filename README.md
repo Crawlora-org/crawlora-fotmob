@@ -8,7 +8,7 @@ The packages do not run a browser or scrape FotMob locally. Crawlora is an indep
 - Python: [`crawlora-fotmob`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-fotmob`](go.mod)
 - Ruby: [`crawlora-fotmob`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-fotmob:0.1.5`](java/README.md)
+- Java: [`net.crawlora:crawlora-fotmob:0.1.6`](java/README.md)
 - PHP: [`crawlora/fotmob`](php/README.md)
 - Full endpoint and parameter reference: [docs/usage.md](docs/usage.md)
 - Runnable samples: [examples/](examples/)
@@ -25,7 +25,7 @@ gem install crawlora-fotmob
 composer require crawlora/fotmob
 ```
 
-For Java, add `net.crawlora:crawlora-fotmob:0.1.5` to your Maven dependencies; see [java/README.md](java/README.md).
+For Java, add `net.crawlora:crawlora-fotmob:0.1.6` to your Maven dependencies; see [java/README.md](java/README.md).
 
 Set your Crawlora key in the environment before running a client:
 
