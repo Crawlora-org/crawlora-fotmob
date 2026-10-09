@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-fotmob"
-version = "0.1.4"
+version = "0.1.5"
 description = "Typed FotMob client for the Crawlora hosted API"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -23,7 +23,8 @@ async = ["httpx>=0.27"]
 test = ["mypy>=1.11", "pytest>=8"]
 
 [project.urls]
-Homepage = "https://github.com/Crawlora-org/crawlora-fotmob"
+Homepage = "https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=fotmob-python-homepage"
+Documentation = "https://crawlora.net/docs?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=fotmob-python-api-docs"
 Repository = "https://github.com/Crawlora-org/crawlora-fotmob"
 
 [tool.setuptools.packages.find]

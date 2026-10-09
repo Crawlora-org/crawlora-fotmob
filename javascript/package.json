@@ -1,8 +1,8 @@
 {
   "name": "@crawlora-org/fotmob",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Typed JavaScript client for the Crawlora FotMob API",
-  "homepage": "https://github.com/Crawlora-org/crawlora-fotmob#readme",
+  "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=fotmob-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-fotmob/issues" },
   "keywords": ["crawlora", "api-client", "web-scraping", "fotmob", "typescript"],
   "type": "module",
