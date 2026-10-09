@@ -9,7 +9,7 @@ import {
 
 export class FotMobClient extends CrawloraClient {
   constructor(options = {}) {
-    super({ ...options, userAgent: options.userAgent ?? "crawlora-fotmob-js/0.1.6" });
+    super({ ...options, userAgent: options.userAgent ?? "crawlora-fotmob-js/0.1.7" });
     this["audioMatches"] = (...args) => this.request("fotmob-audio-matches", ...args);
     this["fifaRankingPeriods"] = (...args) => this.request("fotmob-fifa-ranking-periods", ...args);
     this["fifaRankings"] = (...args) => this.request("fotmob-fifa-rankings", ...args);
@@ -53,5 +53,5 @@ export {
   CrawloraServerError
 };
 export { groups, operations, operationCount, OperationIds } from "./operations.js";
-export const VERSION = "0.1.6";
+export const VERSION = "0.1.7";
 export default FotMobClient;
