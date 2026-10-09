@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/fotmob",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Typed JavaScript client for the Crawlora FotMob API",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=fotmob-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-fotmob/issues" },

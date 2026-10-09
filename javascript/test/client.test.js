@@ -26,7 +26,7 @@ test("serializes required query/path values, adds API key and platform User-Agen
   await client.request("fotmob-fifa-ranking-periods", {"gender": "men"});
   assert.match(seen.url, /\/fotmob\/fifa\-ranking\-periods/);
   assert.equal(seen.headers["x-api-key"], "secret");
-  assert.equal(seen.headers["user-agent"], "crawlora-fotmob-js/0.1.7");
+  assert.equal(seen.headers["user-agent"], "crawlora-fotmob-js/0.1.8");
 });
 
 test("allows caller User-Agent override and response text mode", async () => {
