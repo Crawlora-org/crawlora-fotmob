@@ -4,9 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crawlora-fotmob"
-version = "0.1.8"
-description = "Typed FotMob client for the Crawlora hosted API"
+version = "0.1.9"
+description = "Crawlora FotMob API client with 31 endpoints for leagues, matches, fixtures, teams, players, search, standings, news, and rankings"
 readme = "README.md"
+keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "fotmob", "fotmob-api", "fotmob-scraper", "fotmob-data", "fotmob-leagues", "fotmob-matches", "fotmob-fixtures", "fotmob-teams", "fotmob-players", "fotmob-search", "fotmob-standings", "fotmob-news", "fotmob-rankings"]
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]

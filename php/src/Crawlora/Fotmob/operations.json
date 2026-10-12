@@ -74,6 +74,8 @@
       "path": "/fotmob/audio-matches",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [],
       "produces": [
         "application/json"
@@ -99,6 +101,8 @@
           ]
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Ranking gender",
@@ -143,6 +147,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Ranking gender",
@@ -184,6 +190,8 @@
           "type": "integer"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Zero-based news offset; defaults to 0",
@@ -224,6 +232,8 @@
           "type": "boolean"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob league id from /fotmob/leagues",
@@ -261,6 +271,8 @@
       "path": "/fotmob/leagues",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [],
       "produces": [
         "application/json"
@@ -282,6 +294,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Comma-separated list of 1 to 11 numeric FotMob player ids",
@@ -312,6 +326,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob team id discoverable through /fotmob/search",
@@ -342,6 +358,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob match id",
@@ -372,6 +390,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob match id, discoverable from /fotmob/matches or /fotmob/search",
@@ -407,6 +427,8 @@
           "type": "string"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Date in YYYYMMDD format",
@@ -449,6 +471,8 @@
           "type": "integer"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob league id",
@@ -487,6 +511,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Complete FotMob top-news article id and slug from the public article URL",
@@ -522,6 +548,8 @@
           "type": "boolean"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob player id from fotmob/search",
@@ -565,6 +593,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob player id",
@@ -618,6 +648,8 @@
           "type": "string"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob player id from fotmob/search",
@@ -677,6 +709,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob player id from fotmob/search",
@@ -715,6 +749,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Search phrase, 1 to 50 characters",
@@ -747,6 +783,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob league id from /fotmob/leagues",
@@ -817,6 +855,8 @@
           ]
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob league id",
@@ -912,6 +952,8 @@
           ]
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob league id",
@@ -961,6 +1003,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob league id",
@@ -991,6 +1035,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob team id",
@@ -1027,6 +1073,8 @@
           "required": true
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob team id",
@@ -1070,6 +1118,8 @@
           "type": "integer"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Numeric FotMob team id",
@@ -1182,6 +1232,8 @@
           "type": "boolean"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "default": "all",
@@ -1300,6 +1352,8 @@
       "path": "/fotmob/trending-news",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [],
       "produces": [
         "application/json"
@@ -1314,6 +1368,8 @@
       "path": "/fotmob/trending-searches",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [],
       "produces": [
         "application/json"
@@ -1423,6 +1479,8 @@
           "type": "string"
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Market code from /fotmob/tv-guide-countries",
@@ -1626,6 +1684,8 @@
           ]
         }
       ],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [
         {
           "description": "Market code from /fotmob/tv-guide-countries",
@@ -1732,6 +1792,8 @@
       "path": "/fotmob/tv-guide-countries",
       "pathParams": [],
       "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
       "params": [],
       "produces": [
         "application/json"

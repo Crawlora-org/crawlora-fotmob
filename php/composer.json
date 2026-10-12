@@ -1,6 +1,26 @@
 {
   "name": "crawlora/fotmob",
-  "description": "FotMob client for the Crawlora hosted API",
+  "description": "Crawlora FotMob API client with 31 endpoints for leagues, matches, fixtures, teams, players, search, standings, news, and rankings",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "sdk",
+    "web-scraping",
+    "scraping-api",
+    "fotmob",
+    "fotmob-api",
+    "fotmob-scraper",
+    "fotmob-data",
+    "fotmob-leagues",
+    "fotmob-matches",
+    "fotmob-fixtures",
+    "fotmob-teams",
+    "fotmob-players",
+    "fotmob-search",
+    "fotmob-standings",
+    "fotmob-news",
+    "fotmob-rankings"
+  ],
   "type": "library",
   "license": "MIT",
   "require": {
