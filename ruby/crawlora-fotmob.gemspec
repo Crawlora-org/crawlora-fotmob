@@ -3,8 +3,8 @@ require_relative "lib/crawlora/fotmob/version"
 Gem::Specification.new do |spec|
   spec.name = "crawlora-fotmob"
   spec.version = Crawlora::Fotmob::VERSION
-  spec.summary = "FotMob client for the Crawlora hosted API"
-  spec.description = "Credential-free FotMob API access through Crawlora's hosted service."
+  spec.summary = "FotMob API client for Crawlora (31 endpoints)"
+  spec.description = "Ruby client for Crawlora's hosted FotMob API. Covers leagues, matches, fixtures, teams, players, search, standings, news, and rankings across 31 endpoints."
   spec.authors = ["Crawlora"]
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6"
