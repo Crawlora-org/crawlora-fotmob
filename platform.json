@@ -1,36 +1,51 @@
 {
   "async_class_name": "AsyncFotMobClient",
   "class_name": "FotMobClient",
-  "contract_revision": "sha256:d40e5ee2b400b1b40b5ca6998063cde26b6bb3e7f84da679b5047d26380f3fa1",
+  "contract_revision": "sha256:8769e4cf3f8b6494435a97ef434fd699014967491242a3a3bbe235c93a9c67a0",
   "display_name": "FotMob",
+  "general_sdk_version": "1.46.0-sdk.1",
+  "golang_module_name": "github.com/Crawlora-org/crawlora-fotmob",
+  "golang_version": "0.1.10",
   "group_name": "fotmob",
+  "java_description": "Java client for Crawlora's hosted FotMob API, with methods for leagues, matches, fixtures, teams, players, search, standings, news, and rankings. Requires a Crawlora API key.",
+  "maven_artifact_id": "crawlora-fotmob",
+  "maven_group_id": "net.crawlora",
   "module_name": "crawlora_fotmob",
   "npm_name": "@crawlora-org/fotmob",
+  "php_package_name": "crawlora/fotmob",
+  "php_repository": "https://github.com/Crawlora-org/crawlora-fotmob",
   "platform": "fotmob",
   "python_name": "crawlora-fotmob",
   "releases": [
     {
-      "version": "0.1.9",
-      "date": "2026-10-12",
+      "changes": [
+        "Updated operation contracts: fotmob-fifa-ranking-periods, fotmob-seasons, fotmob-tv-guide-countries."
+      ],
+      "date": "2026-10-14",
+      "version": "0.1.10"
+    },
+    {
       "changes": [
         "List every supported endpoint in the repository and package READMEs.",
         "Add platform-specific search keywords to the npm, PyPI, and Composer package metadata."
-      ]
+      ],
+      "date": "2026-10-12",
+      "version": "0.1.9"
     },
     {
-      "version": "0.1.8",
-      "date": "2026-10-09",
       "changes": [
         "Keep the platform README as a language-package index without cross-language installation commands or code examples; pkg.go.dev now shows only its Go example."
-      ]
+      ],
+      "date": "2026-10-09",
+      "version": "0.1.8"
     },
     {
-      "version": "0.1.7",
-      "date": "2026-10-09",
       "changes": [
         "Publish the PHP Composer package from a PHP-only source repository so Packagist displays only PHP installation and usage.",
         "Link RubyGems and Maven Central directly to their Ruby and Java guides, and add a tested Go package documentation example."
-      ]
+      ],
+      "date": "2026-10-09",
+      "version": "0.1.7"
     },
     {
       "changes": [
@@ -47,12 +62,12 @@
       "version": "0.1.5"
     },
     {
-      "version": "0.1.4",
-      "date": "2026-10-08",
       "changes": [
         "Add focused Go, Ruby, Java, and PHP clients with registry installation examples and Crawlora links.",
         "Synchronize and verify package releases across npm, PyPI, Go modules, RubyGems, Maven Central, GitHub Packages, and Packagist."
-      ]
+      ],
+      "date": "2026-10-08",
+      "version": "0.1.4"
     },
     {
       "changes": [
@@ -87,15 +102,7 @@
     }
   ],
   "repository": "https://github.com/Crawlora-org/crawlora-fotmob",
-  "source_contract_sha256": "f8ff81231fc46cd7d6ef5f5bb99707dfa301c595ce731a533a67b49d055aa44b",
-  "version": "0.1.9",
-  "golang_module_name": "github.com/Crawlora-org/crawlora-fotmob",
-  "golang_version": "0.1.9",
   "ruby_gem_name": "crawlora-fotmob",
-  "php_package_name": "crawlora/fotmob",
-  "maven_group_id": "net.crawlora",
-  "maven_artifact_id": "crawlora-fotmob",
-  "java_description": "Java client for Crawlora's hosted FotMob API, with methods for leagues, matches, fixtures, teams, players, search, standings, news, and rankings. Requires a Crawlora API key.",
-  "general_sdk_version": "1.46.0-sdk.1",
-  "php_repository": "https://github.com/Crawlora-org/crawlora-fotmob"
+  "source_contract_sha256": "58a42b604ca03b9d6cf27355e0e56f34719985b905a61df2f9f2a8c55f651f74",
+  "version": "0.1.10"
 }

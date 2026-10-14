@@ -8,7 +8,7 @@ Official Crawlora client packages for the hosted FotMob API. Access 31 API endpo
 - Python: [`crawlora-fotmob`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-fotmob`](go.mod)
 - Ruby: [`crawlora-fotmob`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-fotmob:0.1.9`](java/README.md)
+- Java: [`net.crawlora:crawlora-fotmob:0.1.10`](java/README.md)
 - PHP: [`crawlora/fotmob`](php/README.md)
 
 For installation and runnable examples, use the README for your language. See the [API endpoint and parameter reference](docs/usage.md) for shared operation details.

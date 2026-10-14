@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted FotMob API. It exposes 31 endpoin
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-fotmob</artifactId>
-  <version>0.1.9</version>
+  <version>0.1.10</version>
 </dependency>
 ```
 

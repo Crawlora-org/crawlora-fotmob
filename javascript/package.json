@@ -1,6 +1,6 @@
 {
   "name": "@crawlora-org/fotmob",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Crawlora FotMob API client with 31 endpoints for leagues, matches, fixtures, teams, players, search, standings, news, and rankings",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=fotmob-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-fotmob/issues" },

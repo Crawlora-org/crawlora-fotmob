@@ -301,7 +301,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns every ranking period currently offered by FotMob for the selected gender. Use a returned periodId with /fotmob/fifa-rankings.",
+        "description": "Lists the FIFA ranking periods FotMob currently offers for the required `gender` (`men` or `women`). Each period has a `periodId` and a `periodName` date label. Pass a `periodId` to the FotMob FIFA rankings endpoint; the ids change over time and are not a fixed set.",
         "operationId": "fotmob-fifa-ranking-periods",
         "parameters": [
           {
@@ -1323,7 +1323,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns the complete list of season values accepted by the FotMob league endpoint for one competition.",
+        "description": "Lists the season values FotMob offers for one league, identified by the required numeric `league_id` (from the FotMob leagues endpoint). The response has the league id, name and a `seasons` list such as `2026/2027`. Pass a season to the FotMob league endpoint; the list varies by league.",
         "operationId": "fotmob-seasons",
         "parameters": [
           {
@@ -2317,7 +2317,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Lists all country codes exposed by FotMob's public football TV guide country selector.",
+        "description": "Lists the countries in FotMob's football TV guide country selector, each with a country `code` (such as `us`, `gb`, `de` or `jp`) and a name. Use a code with the FotMob TV guide and TV guide channels endpoints. It takes no parameters.",
         "operationId": "fotmob-tv-guide-countries",
         "produces": [
           "application/json"

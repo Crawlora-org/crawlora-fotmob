@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.10 — 2026-10-14
+
+- Updated operation contracts: fotmob-fifa-ranking-periods, fotmob-seasons, fotmob-tv-guide-countries.
+
 ## 0.1.9 — 2026-10-12
 
 - List every supported endpoint in the repository and package READMEs.
